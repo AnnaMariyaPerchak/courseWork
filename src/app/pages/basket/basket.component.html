@@ -1,0 +1,133 @@
+<h1 class="text-center">{{'basket.tite' | translate}}</h1>
+<div class="basket" >
+  <div class="container" class="basket__container" *ngIf="orders.length!==0">
+    <table class="table basket__container__table">
+      <thead>
+        <th>#</th>
+        <th>{{'basket.table.head.name' |translate}}</th>
+        <th>{{'basket.table.head.price' |translate}}</th>
+        <th class="text-center">{{'basket.table.head.count' |translate}}</th>
+        <th>{{'basket.table.head.total' |translate}}</th>
+        <th>{{'basket.table.head.delete' |translate}}</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders; let i=index">
+          <td>{{ i+1 }}</td>
+          <td>
+            <p *ngIf="browserLang==='ukr'">{{ order.nameUkr }}</p>
+            <p *ngIf="!(browserLang==='ukr')">{{ order.name }}</p>
+          </td>
+          <td>{{ order.price }}</td>
+          <td class="basket__container__table__dishCount">
+            <div class="d-flex justify-content-between">
+              <button type="button" class="btn basket__container__table__dishCount__counter" (click)="orderCount(order, false)"
+                [disabled]="order.count===1 ? true : false">-</button>
+              <p>{{order.count}}</p>
+              <button type="button" class="btn basket__container__table__dishCount__counter" (click)="orderCount(order, true)">+</button>
+            </div>
+          </td>
+          <td>
+            {{ order.price * order.count }}
+          </td>
+          <td>
+            <button type="button" class="btn basket__container__table__deleteBtn"
+              (click)="deleteOrder(order)">{{'basket.table.body.delete' |translate}}</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <p> Total price {{totalPrice}} grn</p> -->
+    <p> {{'basket.totalPrice' | translate : {'totalPrice':totalPrice} }}</p>
+    <!-- <p>{{'backet.totalPrice' | translate : {'totalPrice':totalPrice}}} Total price {{totalPrice}} grn</p> -->
+    <div class="basket__container__makeBtns">
+      <a class="btn basket__container__makeBtns__button" *ngIf="makeOrder"
+        (click)="openModal(checkEmailTemplate)">{{'basket.makeOrderBtn' |translate}}</a>
+        <!-- (click)="addOrder(checkEmailTemplate)">MAKE AN ORDER</a> -->
+      <a class="btn basket__container__makeBtns__button" *ngIf="!makeOrder" 
+        (click)="openModal(template)">{{'basket.makeOrderBtn' |translate}}</a>
+
+    </div>
+
+  </div>
+  <div class="basket__emptyness">
+    <h2 *ngIf="orders.length==0">{{'basket.emptyness'|translate}}</h2>
+  </div>
+</div>
+
+<ng-template #checkEmailTemplate>
+  <div class="modal-header">
+    <h4>{{'basket.checkModal.header.title'|translate}}</h4>
+  </div>
+  <div class="modal-body modal-sm">
+    <div class="form-group">
+      <label for="userCheckStreet">{{'basket.checkModal.body.street'|translate}}</label>
+    <input type="text" [(ngModel)]="userCheckStreet" name="userCheckStreet">
+    </div>
+    <div class="form-group">
+      <label for="userCheckHouse"> {{'basket.checkModal.body.house'|translate}}</label>
+    <input type="text" [(ngModel)]="userCheckHouse" name="userCheckHouse">
+    </div>
+    <div class="form-group">
+      <label for="userCheckFlat">{{'basket.checkModal.body.flat'|translate}}</label>
+    <input type="text" [(ngModel)]="userCheckFlat" name="userCheckFlat">
+    </div>
+  </div>
+  <div class="modal-footer">
+    <input type="button" value="{{'basket.checkModal.body.button'|translate}}" class="btn template__footer__button"
+      (click)="checkAddress();modalRef.hide();openModal(makeOrderTemplate)">
+  </div>
+</ng-template>
+
+<ng-template #makeOrderTemplate>
+  <div class="modal-body modal-sm">
+    <p>{{'basket.modal.title'|translate}}</p>
+  </div>
+</ng-template>
+
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4>{{'basket.makeOrderModal.header.title'|translate}}</h4>
+
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <small class="text-center">{{'basket.makeOrderModal.body.subtitle'|translate}}</small>
+
+    <hr>
+    <form>
+      <div class="form-group">
+        <label for="firstName">{{'basket.makeOrderModal.body.firstName'|translate}}</label>
+        <input type="text" class="form-control" [(ngModel)]="userFirstName" name="userFirstName">
+      </div>
+      <div class="form-group">
+        <label for="lastName">{{'basket.makeOrderModal.body.lastName'|translate}}</label>
+        <input type="text" class="form-control" [(ngModel)]="userLastName" name="userLastName">
+      </div>
+      <div class="form-group">
+        <label for="inputEmail4">{{'basket.makeOrderModal.body.email'|translate}}</label>
+        <input type="email" class="form-control" [(ngModel)]="userEmail" name="userEmail">
+      </div>
+      <div class="form-group">
+        <label for="city">{{'basket.makeOrderModal.body.phone'|translate}}</label>
+        <input type="text" class="form-control" [(ngModel)]="userPhone" name="userPhone">
+      </div>
+      <div class="form-group">
+        <label for="address">{{'basket.makeOrderModal.body.address'|translate}}</label>
+        <input type="text" class="form-control" [(ngModel)]="userAddress" name="userAddress">
+      </div>
+      <!-- <div class="form-group">
+        <label for="address">Notes</label>
+        <input type="text" class="form-control" [(ngModel)]="userAddress" name="userAddress">
+      </div> -->
+    </form>
+  </div>
+  <div class="modal-footer">
+    <input type="button" value="{{'basket.makeOrderModal.footer.closeBtn'|translate}}" class="btn template__footer__button"
+      (click)="modalRef.hide()">
+    <input type="button" value="{{'basket.makeOrderModal.footer.makeOrder'|translate}}" class="btn template__footer__button"
+      (click)="orderWithoutLogIn()">
+  </div>
+</ng-template>

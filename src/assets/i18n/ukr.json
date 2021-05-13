@@ -1,0 +1,371 @@
+{
+	"admin": {
+		"category": {
+			"deleteTemplate": {
+				"deleteBtn": "Видалити",
+				"dismissBtn": "Відмінити"
+			},
+			"head": {
+				"addBtn": "Додати",
+				"title": "Категорії"
+			},
+			"searchField": "пошук по категоріях",
+			"table": {
+				"deleteBtn": "Видалити",
+				"editBtn": "Редагувати",
+				"name": "Назва(англ)",
+				"nameUkr": "Назва(укр)"
+			},
+			"template": {
+				"addTitle": "Додати нову категорію",
+				"body": {
+					"name": "Назва(англ)",
+					"nameUkr": "Назва(укр)"
+				},
+				"editTitle": "Редагувати категорію",
+				"footer": {
+					"addBtn": "Додати",
+					"closeBtn": "Закрити",
+					"saveChangesBtn": "Зберегти зміни"
+				}
+			}
+		},
+		"dishes": {
+			"deleteTemplate": {
+				"deleteBtn": "Видалити",
+				"dismissBtn": "Відмінити"
+			},
+			"head": {
+				"addBtn": "Додати",
+				"title": "Страви"
+			},
+			"searchField": "пошук страви",
+			"table": {
+				"deleteBtn": "Видалити",
+				"editBtn": "Редагувати",
+				"en": "Англ",
+				"head": {
+					"category": "Категорія",
+					"description": "Опис",
+					"image": "Виьеріть зображення",
+					"name": "Назва",
+					"price": "Ціна",
+					"weight": "Вага"
+				},
+				"ukr": "Укр"
+			},
+			"template": {
+				"body": {
+					"description": "Опис(англ)",
+					"descriptionUkr": "Опис(укр)",
+					"image": "Зображення",
+					"name": "Назва(англ)",
+					"nameUkr": "Назва(укр)",
+					"option": "Меню вибору",
+					"price": "Ціна",
+					"weight": "Вага"
+				},
+				"footer": {
+					"addBtn": "Додати",
+					"closeBtn": "Закрити",
+					"saveChangesBtn": "Зберегти зміни"
+				},
+				"head": {
+					"addTitle": "Додати нову страву",
+					"editTitle": "Редагувати дані про страву"
+				}
+			}
+		},
+		"nutritions": {
+			"deleteTemplate": {
+				"deleteBtn": "Видалити",
+				"dismissBtn": "Відмінити"
+			},
+			"head": {
+				"addBtn": "Додати",
+				"title": "Програми харчування"
+			},
+			"searchField": "пошук програми харчування",
+			"table": {
+				"category": "Категорія",
+				"deleteBtn": "Видалити",
+				"description": "Опис",
+				"editBtn": "Редагувати",
+				"en": "Англ",
+				"kcal": "Ккал",
+				"name": "Назва",
+				"price": "Ціна",
+				"ukr": "Укр"
+			},
+			"template": {
+				"body": {
+					"category": {
+						"men": "для чоловіків",
+						"option": "Меню вибору",
+						"title": "Категорія",
+						"women": "для жінок"
+					},
+					"nutrition": {
+						"breakfast": "Сніданок(англ)",
+						"breakfastUkr": "Сніданок(укр)",
+						"firstDinner": "Обід(англ)",
+						"firstDinnerUkr": "Обід(укр)",
+						"kcal": "Ккал",
+						"lunch": "Перекус(англ)",
+						"lunchUkr": "Перекус(укр)",
+						"name": "Назва програми(англ)",
+						"nameUkr": "Назва програми(укр)",
+						"price": "Ціна",
+						"secondDinner": "Вечеря(англ)",
+						"secondDinnerUkr": "Вечеря(укр)",
+						"supper": "Підвечірок(англ)",
+						"supperUkr": "Підвечірок(укр)"
+					}
+				},
+				"footer": {
+					"addBtn": "Додати",
+					"closeBtn": "Закрити",
+					"saveChangesBtn": "Зберегти зміни"
+				},
+				"head": {
+					"addTitle": "Додати нову страву",
+					"editTitle": "Редагувати страву"
+				}
+			}
+		},
+		"orders": {
+			"searchField": "пошук замовлення",
+			"table": {
+				"dishes": "Страви із замовлення",
+				"price": "Загальна вартість",
+				"user": {
+					"address": "Адреса клієнта",
+					"name": "ПІБ",
+					"phone": "Номер клієнта"
+				}
+			},
+			"title": "Замовлення"
+		},
+		"panel": {
+			"category": "Категорії",
+			"dishes": "Страви",
+			"logOutBtn": "Вийти",
+			"nutrition": "Програми",
+			"orders": "Замовлення"
+		}
+	},
+	"basket": {
+		"checkModal": {
+			"body": {
+				"button": "Готово",
+				"flat": "Квартира",
+				"house": "Будинок",
+				"street": "Вулиця"
+			},
+			"header": {
+				"title": "Тут Ви можете змінити замовлення"
+			}
+		},
+		"emptyness": "Кошик порожній",
+		"makeOrderBtn": "Оформити замовлення",
+		"makeOrderModal": {
+			"body": {
+				"address": "Адреса",
+				"email": "Електронна пошта",
+				"firstName": "Ім'я",
+				"lastName": "Прізвище",
+				"phone": "Номер телефону",
+				"subtitle": "Якщо Ви хочете зробити замовлення,потрібно внести деякі дані."
+			},
+			"footer": {
+				"closeBtn": "Закрити",
+				"makeOrder": "Оформити замовлення"
+			},
+			"header": {
+				"title": "Оформити замовлення"
+			}
+		},
+		"modal": {
+			"title": "Ваше замовлення готується"
+		},
+		"table": {
+			"body": {
+				"delete": "Видалити"
+			},
+			"head": {
+				"count": "Кількість",
+				"delete": "Видалити",
+				"name": "Найменнування",
+				"price": "Ціна",
+				"total": "Загальна ціна"
+			}
+		},
+		"tite": "Замовлення",
+		"totalPrice": "Сума до сплати : {{totalPrice}} грн"
+	},
+	"dish": {
+		"currency": "грн",
+		"description": "Інгредієнти",
+		"order": "Замовити",
+		"orderIngredients": "Замовити інгредієнти"
+	},
+	"footer": {
+		"info": {
+			"location": "Наша локація : Львів",
+			"phone": "Наш номер телефону :",
+			"title": "Трішки інформації про нас"
+		},
+		"links": {
+			"bowl": "Боули",
+			"desserts": "Десерти",
+			"fish": "Риба",
+			"meat": "М'ясо",
+			"pasta": "Паста",
+			"programs": {
+				"men": "Для чоловіків",
+				"title": "Програми харчування",
+				"women": "Для жінок"
+			},
+			"salad": "Салати",
+			"smoothie": "Смузі",
+			"soup": "Супи"
+		}
+	},
+	"header": {
+		"adminPage": "Адмін",
+		"basket": "Кошик : {{ totalPrice }} грн",
+		"courierPage": "Кур'єр",
+		"food": "Страви",
+		"foodBowl": "Боули",
+		"foodDesserts": "Десерти",
+		"foodFish": "Риба",
+		"foodMeat": "М'ясо",
+		"foodPasta": "Паста",
+		"foodSalad": "Салати",
+		"foodSmoothie": "Смузі",
+		"foodSoup": "Супи",
+		"logIn": "Зайти",
+		"programs": "Програми харчування",
+		"programsMen": "Для чоловіків",
+		"programsWomen": "Для жінок",
+		"userPage": "Профіль"
+	},
+	"home": {
+		"advantages": {
+			"delicious": {
+				"first": "Досвідчений шеф-кухар та професійно приготовлені страви",
+				"second": "Корисні та смачні десерти",
+				"third": "Корисні цукерки як додаток до доставки",
+				"title": "Смачно"
+			},
+			"qualitative": {
+				"first": "Технологія Cook & Chill",
+				"second": "Найкращий сервіс за результатами рейтингу Народної премії України-2018 та 2019 років",
+				"third": "Рекомендовано Асоціацією дієтологів України",
+				"title": "Якісно"
+			},
+			"usefull": {
+				"first": "Продукція від місцевих фермерів та сертифікованих постачальників",
+				"second": "Здорові способи приготування - випічка, конвектомат, сушарка",
+				"third": "Оптимальний вміст солі",
+				"title": "Корисно"
+			},
+			"variable": {
+				"first": "Більше 50 страв",
+				"second": "Сезонне оновлення меню",
+				"third": "Більше 15 програм харчування,розроблених нутриціологом",
+				"title": "Різноманітно"
+			}
+		},
+		"intro": {
+			"leftFirst": "ДАВАЙТЕ ЇСТИ ЗДОРОВУ НАТУРАЛЬНУ ЇЖУ",
+			"leftSecon": "Доставимо до Ваших дверей за лічені хвилини."
+		},
+		"menuExamples": {
+			"dishes": {
+				"bowl": "Боул",
+				"dessert": "Десерти",
+				"fish": "Риба",
+				"meat": "М'ясо",
+				"pasta": "Паста",
+				"salad": "Салати",
+				"smoothie": "Смузі",
+				"soup": "Супи"
+			},
+			"titleFirst": "100% здорова їжа",
+			"titleSecond": "Беззаперечно смачно."
+		}
+	},
+	"logIn": {
+		"form": {
+			"email": "Електронна пошта",
+			"logInBtn": "Увійти",
+			"password": "Пароль",
+			"routing": {
+				"signUp": "Зареєструйтеся",
+				"title": "У Вас немає акаунту?"
+			}
+		}
+	},
+	"nutrition": {
+		"currency": "грн",
+		"details": "Детальніше",
+		"kcal": "ккал",
+		"order": "Замовити",
+		"template": {
+			"breakfast": "Сніданок",
+			"closeBtn": "Закрити",
+			"firstDinner": "Обід",
+			"lunch": "Перекус",
+			"secondDinner": "Вечеря",
+			"supper": "Підвечірок",
+			"title": "Приклади страв програми харчування"
+		}
+	},
+	"profile": {
+		"editBtn": "Редагувати дані",
+		"info": {
+			"address": "Адреса",
+			"email": "Пошта",
+			"name": "ПІБ",
+			"phone": "Телефон"
+		},
+		"logoutBtn": "Вийти",
+		"modal": {
+			"body": {
+				"address": "Адреса",
+				"email": "Пошта",
+				"firstName": "Ім'я",
+				"lastName": "Прізвище",
+				"phone": "Телефон"
+			},
+			"footer": {
+				"closeBtn": "Закрити",
+				"saveChanges": "Зберегти зміни"
+			},
+			"title": "Редагувати дані"
+		},
+		"table": {
+			"head": {
+				"orders": "Замовлення",
+				"totalPrice": "Загальна ціна"
+			}
+		},
+		"title": "Персональні дані"
+	},
+	"signUp": {
+		"form": {
+			"address": "Адреса",
+			"email": "Електронна пошта",
+			"firstName": "Ім'я",
+			"lastName": "Прізвище",
+			"password": "Пароль",
+			"phone": "Телефон",
+			"routing": {
+				"logIn": "Увійти",
+				"title": "Вже є акаунт?"
+			},
+			"signUpBtn": "Зареєструватися"
+		}
+	}
+}

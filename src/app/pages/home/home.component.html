@@ -1,0 +1,199 @@
+<div class="home">
+  <div class="home__intro">
+    <div class="text-center home__intro__left">
+      <div class="home__intro__left__text">
+        <h2 class="home__intro__left__text__h2">
+          {{'home.intro.leftFirst'|translate}}
+        </h2>
+        <p class="home__intro__left__text__p">
+          {{'home.intro.leftSecon'|translate}}
+        </p>
+        <!-- <input type="button" [routerLink]="[ '/get-started']" class="btn"
+                    style="font-family: 'Comfortaa-Medium';" value="GET STARTED"> -->
+      </div>
+    </div>
+    <div class="home__intro__right">
+      <img src="../../../assets/images/undraw_shopping_app_flsj.png" alt="" />
+    </div>
+  </div>
+
+  <div class="home__menuExamples">
+    <div class="home__menuExamples__title">
+      <div class="text-center home__menuExamples__title__subtitle">
+        <div>
+          <h1 class="home__menuExamples__title__subtitle__h1">
+            {{'home.menuExamples.titleFirst'|translate}}
+          </h1>
+          <h1>{{'home.menuExamples.titleSecond'|translate}}</h1>
+        </div>
+        <img src="../../../assets/images/intersection.png" alt="" />
+      </div>
+    </div>
+    <div class="home__menuExamples__dishes">
+      <div class="text-center">
+        <button
+          type="button"
+          class="home__menuExamples__dishes__btn"
+          (click)="getDish('soup')"
+        >
+          {{'home.menuExamples.dishes.soup'|translate}}
+        </button>
+        <button
+          type="button"
+          class="home__menuExamples__dishes__btn"
+          (click)="getDish('pasta')"
+        >
+        {{'home.menuExamples.dishes.pasta'|translate}}
+        </button>
+        <button
+          type="button"
+          class="home__menuExamples__dishes__btn"
+          (click)="getDish('bowl')"
+        >
+        {{'home.menuExamples.dishes.bowl'|translate}}
+        </button>
+        <button
+          type="button"
+          class="home__menuExamples__dishes__btn"
+          (click)="getDish('fish')"
+        >
+        {{'home.menuExamples.dishes.fish'|translate}}
+        </button>
+        <button
+          type="button"
+          class="home__menuExamples__dishes__btn"
+          (click)="getDish('meat')"
+        >
+        {{'home.menuExamples.dishes.meat'|translate}}
+        </button>
+        <button
+          type="button"
+          class="home__menuExamples__dishes__btn"
+          (click)="getDish('salad')"
+        >
+        {{'home.menuExamples.dishes.salad'|translate}}
+        </button>
+        <!-- <button
+          type="button"
+          class="home__menuExamples__dishes__btn"
+          (click)="getDish('bakery')"
+        >
+          Bakery
+        </button> -->
+        <button
+          type="button"
+          class="home__menuExamples__dishes__btn"
+          (click)="getDish('desserts')"
+        >
+        {{'home.menuExamples.dishes.dessert'|translate}}
+        </button>
+        <button type="button" class="home__menuExamples__dishes__btn" (click)="getDish('smoothie')">
+          {{'home.menuExamples.dishes.smoothie'|translate}}
+        </button>
+      </div>
+
+      <div class="home__menuExamples__dishes__cards">
+        <div
+          class="home__menuExamples__dishes__cards__card"
+          *ngFor="let dish of dishes; let i = index"
+        >
+          <div *ngIf="i < 3">
+            <img [attr.src]="dish.image" class="text-center" alt="..." />
+            <h2 *ngIf="browserLang==='ukr'" class="home__menuExamples__dishes__cards__card__title">{{ dish.nameUkr }}</h2>
+            <h2 *ngIf="!(browserLang==='ukr')" class="home__menuExamples__dishes__cards__card__title">{{ dish.name }}</h2>
+            <p *ngIf="browserLang==='ukr'" class="home__menuExamples__dishes__cards__card__info">
+              {{ dish.descriptionUkr | truncateText: 56:true }}
+            </p>
+            <p *ngIf="!(browserLang==='ukr')" class="home__menuExamples__dishes__cards__card__info">
+              {{ dish.description | truncateText: 56:true }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home__advantages">
+    <div class="home__advantages__block1">
+      <div class="home__advantages__block1__pros1">
+        <div class="home__advantages__block1__pros1__head">
+          <img
+            class="home__advantages__block1__pros1__head__img"
+            src="../../../assets/images/icon1.svg"
+            alt=""
+          />
+          <p class="home__advantages__block1__pros1__head__text"> {{'home.advantages.qualitative.title'|translate}}</p>
+        </div>
+        <ul class="home__advantages__block1__pros1__list">
+          <li>{{'home.advantages.qualitative.first'|translate}}</li>
+          <li>{{'home.advantages.qualitative.second'|translate}}</li>
+          <li>{{'home.advantages.qualitative.third'|translate}}</li>
+        </ul>
+      </div>
+      <div class="home__advantages__block1__pros2">
+        <div class="home__advantages__block1__pros2__head">
+          <img
+            class="home__advantages__block1__pros2__head__img"
+            src="../../../assets/images/icon2.svg"
+            alt=""
+          />
+          <p class="home__advantages__block1__pros2__head__text">{{'home.advantages.usefull.title'|translate}}</p>
+        </div>
+        <ul class="home__advantages__block1__pros2__list">
+          <li>{{'home.advantages.usefull.first'|translate}}</li>
+          <li>{{'home.advantages.usefull.second'|translate}}</li>
+          <li> {{'home.advantages.usefull.third'|translate}}</li>
+        </ul>
+      </div>
+      <div class="home__advantages__block1__pictures">
+        <img class="home__advantages__block1__pictures__avocado" src="../../../assets/images/002-avocado.png" alt="" />
+        <img class="home__advantages__block1__pictures__carrot" src="../../../assets/images/012-carrot-1.png" alt="" />
+        <img class="home__advantages__block1__pictures__tomato" src="../../../assets/images/007-tomato-1.png" alt="" />
+        <img class="home__advantages__block1__pictures__mushroom" src="../../../assets/images/044-mushroom.png" alt="" />
+        <img class="home__advantages__block1__pictures__broccoli" src="../../../assets/images/045-broccoli.png" alt="" />
+      </div>
+    </div>
+    <div class="home__advantages__block2">
+      <div class="home__advantages__block2__pictures">
+        <img class="home__advantages__block1__pictures__melon" src="../../../assets/images/005-melon-1.png" alt="" />
+        <img class="home__advantages__block1__pictures__mango" src="../../../assets/images/036-mango.png" alt="" />
+        <img class="home__advantages__block1__pictures__papaya" src="../../../assets/images/009-papaya.png" alt="" />
+        <img class="home__advantages__block1__pictures__berries" src="../../../assets/images/014-berries.png" alt="" />
+        <img class="home__advantages__block1__pictures__strawberry" src="../../../assets/images/034-strawberry.png" alt="" />
+      </div>
+      <div class="home__advantages__block2__pros1">
+        <div class="home__advantages__block2__pros1__head">
+          <img
+            class="home__advantages__block2__pros1__head__img"
+            src="../../../assets/images/icon5.svg"
+            alt=""
+          />
+          <p class="home__advantages__block2__pros1__head__text">{{'home.advantages.variable.title'|translate}}</p>
+        </div>
+        <ul class="home__advantages__block2__pros1__list">
+          <li>{{'home.advantages.variable.first'|translate}}</li>
+          <li>{{'home.advantages.variable.second'|translate}}</li>
+          <li>{{'home.advantages.variable.third'|translate}}</li>
+        </ul>
+      </div>
+      <div class="home__advantages__block2__pros2">
+        <div class="home__advantages__block2__pros2__head">
+          <img
+            class="home__advantages__block2__pros2__head__img"
+            src="../../../assets/images/icon4.svg"
+            alt=""
+          />
+          <p class="home__advantages__block2__pros2__head__text">{{'home.advantages.delicious.title'|translate}}</p>
+        </div>
+        <ul class="home__advantages__block2__pros2__list">
+          <li>{{'home.advantages.delicious.first'|translate}}</li>
+          <li>{{'home.advantages.delicious.second'|translate}}</li>
+          <li>{{'home.advantages.delicious.third'|translate}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <p>Frequently asked questions</p>
+  <p>About nutrition programs</p>
+</div>

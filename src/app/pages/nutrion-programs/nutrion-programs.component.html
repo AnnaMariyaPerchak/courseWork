@@ -1,0 +1,109 @@
+<div class="nutritions">
+  <!-- <h1 class="text-center">{{ categoryName }}</h1> -->
+  
+  <h1 *ngIf="!(browserLang==='ukr')" class="text-center">{{ categoryName | titlecase }}</h1>
+  <h1 *ngIf="browserLang==='ukr'" class="text-center">{{ categoryNameUkr | titlecase }}</h1>
+  <div class="nutritions__container">
+    <div
+      class="nutritions__container__card u-clearfix"
+      *ngFor="let nutrition of nutritions; let i = index"
+    >
+    <div class="nutritions__container__card__imageDiv">
+      <img
+        [attr.src]="nutrition.image"
+        class="nutritions__container__card__imageDiv__image"
+      />
+    </div>
+      <div class="nutritions__container__card__body">
+        <h2 *ngIf="!(browserLang==='ukr')" class="nutritions__container__card__body__name">{{ nutrition.name }}</h2>
+        <h2 *ngIf="browserLang==='ukr'" class="nutritions__container__card__body__name">{{ nutrition.nameUkr }}</h2>
+        <p
+          class="btn nutritions__container__card__body__details"
+          (click)="addModal(detailedTemplate, nutrition)"
+        > {{'nutrition.details' | translate}} </p>
+        <div class="nutritions__container__card__body__kcalPrice">
+          <p class="nutritions__container__card__body__kcalPrice__price">
+            {{ nutrition.price }} {{'nutrition.currency' | translate}}
+          </p>
+          <p class="nutritions__container__card__body__kcalPrice__kcal">
+            {{ nutrition.kcal }} {{'nutrition.kcal' | translate}}
+          </p>
+        </div>
+
+        <div class="d-flex justify-content-between nutritions__container__card__body__orderButtons">
+          <button
+            type="button"
+            class="btn nutritions__container__card__body__orderButtons__basketButton"
+            (click)="nutritionCount(nutrition, false)"
+            [disabled]="nutrition.count === 1 ? true : false"
+          >-</button>
+          <p class="nutritions__container__card__body__orderButtons__count">
+            {{ nutrition.count }}
+          </p>
+          <button
+            type="button"
+            class="btn nutritions__container__card__body__orderButtons__basketButton"
+            (click)="nutritionCount(nutrition, true)"
+          >+</button>
+        </div>
+        
+          <button
+          class="btn nutritions__container__card__body__buttons__order"
+          (click)="addBasket(nutrition)"> {{'nutrition.order' | translate}} </button>
+      </div>
+      
+      <!-- <select class='select-option' required [(ngModel)]='optionSelected' (ngModelChange)='onOptionsSelected($event)'>
+        <option class='option' *ngFor='let option of options' [value]="option">{{option}}</option>
+    </select>
+
+    <button
+          class="btn nutritions__container__card__body__buttons__order"
+          (click)="addBasket(nutrition)"> Order </button> -->
+
+    </div>
+  </div>
+</div>
+
+<ng-template #detailedTemplate>
+  <!-- <div class="modal-header template__header">
+    <h4 class="modal-title pull-left template__header__title">
+      Dish example`s of nutrition program "{{ nutritionName }}"
+    </h4>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div> -->
+  <div class="modal-body template__body">
+    <h4 *ngIf="!(browserLang==='ukr')" class="template__body__title"> {{'nutrition.template.title' | translate}} "{{ nutritionName }}"</h4>
+    <h4 *ngIf="browserLang==='ukr'" class="template__body__title">{{'nutrition.template.title' | translate}} "{{ nutritionNameUkr }}"</h4>
+      <p *ngIf="!(browserLang==='ukr')" class="template__body__exampleMenu"> <span class="template__body__exampleMenu__title">{{'nutrition.template.breakfast' | translate}}</span>: {{ nutritionBreakfast }}</p>
+      <p *ngIf="browserLang==='ukr'" class="template__body__exampleMenu"> <span class="template__body__exampleMenu__title">{{'nutrition.template.breakfast' | translate}}</span>: {{ nutritionBreakfastUkr }}</p>
+
+      <p *ngIf="!(browserLang==='ukr')" class="template__body__exampleMenu"><span class="template__body__exampleMenu__title">{{'nutrition.template.lunch' | translate}}</span>: {{ nutritionLunch }}</p>
+      <p *ngIf="browserLang==='ukr'" class="template__body__exampleMenu"><span class="template__body__exampleMenu__title">{{'nutrition.template.lunch' | translate}}</span>: {{ nutritionLunchUkr }}</p>
+
+      <p *ngIf="!(browserLang==='ukr')" class="template__body__exampleMenu"><span class="template__body__exampleMenu__title">{{'nutrition.template.firstDinner' | translate}}</span>: {{ nutritionFirstDinner }}</p>
+      <p *ngIf="browserLang==='ukr'" class="template__body__exampleMenu"><span class="template__body__exampleMenu__title">{{'nutrition.template.firstDinner' | translate}}</span>: {{ nutritionFirstDinnerUkr }}</p>
+      
+      <p *ngIf="!(browserLang==='ukr')" class="template__body__exampleMenu"><span class="template__body__exampleMenu__title">{{'nutrition.template.supper' | translate}}</span>: {{ nutritionSupper }}</p>
+      <p *ngIf="browserLang==='ukr'" class="template__body__exampleMenu"><span class="template__body__exampleMenu__title">{{'nutrition.template.supper' | translate}}</span>: {{ nutritionSupperUkr }}</p>
+      
+      <p *ngIf="!(browserLang==='ukr')" class="template__body__exampleMenu"><span class="template__body__exampleMenu__title">{{'nutrition.template.secondDinner' | translate}}</span>: {{ nutritionSecondDinner }}</p>
+      <p *ngIf="browserLang==='ukr'" class="template__body__exampleMenu"><span class="template__body__exampleMenu__title">{{'nutrition.template.secondDinner' | translate}}</span>: {{ nutritionSecondDinnerUkr }}</p>
+      
+      <input type="button" value="{{'nutrition.template.closeBtn' | translate}}" class="btn template__body__button" (click)="modalRef.hide()" />
+  </div>
+  <!-- <div class="modal-footer template__footer">
+    <input
+      type="button"
+      value="Close"
+      class="btn template__footer__button"
+      (click)="modalRef.hide()"
+    />
+  </div> -->
+</ng-template>

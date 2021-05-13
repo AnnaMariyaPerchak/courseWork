@@ -1,0 +1,142 @@
+<div class="col-12 adminCategory">
+  <div class="container adminCategory__head">
+    <div class="row">
+      <!-- <div class="col-9" style="margin: 5px"> -->
+        <p class="col-9 adminCategory__head__title"> {{'admin.category.head.title' | translate}}</p>
+      <!-- </div> -->
+      <div class="col">
+        <input
+          type="button"
+          (click)="addModal(Template)"
+          value="{{'admin.category.head.addBtn' | translate}}"
+          class="btn adminCategory__head__button"
+        />
+      </div>
+    </div>
+  </div>
+  <input
+    type="text"
+    placeholder="{{'admin.category.searchField' | translate}}"
+    class="adminCategory__filter"
+    [(ngModel)]="searchName"
+    name="searchName"
+  />
+  <hr />
+  <table class="table table-bordered adminCategory__table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">{{'admin.category.table.name' | translate}}</th>
+        <th scope="col">{{'admin.category.table.nameUkr' | translate}}</th>
+        <th scope="col">{{'admin.category.table.editBtn' | translate}}</th>
+        <th scope="col">{{'admin.category.table.deleteBtn' | translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="
+          let category of arrayCategories | search: searchName;
+          let i = index
+        "
+      >
+        <td>{{ i + 1 }}</td>
+        <td>{{ category.name }}</td>
+        <td>{{ category.nameUkr }}</td>
+        <td>
+          <input
+            type="button"
+            value="{{'admin.category.table.editBtn' | translate}}"
+            class="btn adminCategory__table__button"
+            (click)="editModal(Template, category)"
+          />
+        </td>
+        <td>
+          <input
+            type="button"
+            value="{{'admin.category.table.deleteBtn' | translate}}"
+            class="btn adminCategory__table__button"
+            (click)="deleteModal(deleteTemplate, category)"
+          />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #Template>
+  <div class="modal-header template__header">
+    <h4 class="modal-title pull-left template__header__title" *ngIf="!editStatus">{{'admin.category.template.addTitle' | translate}}</h4>
+    <h4 class="modal-title pull-left template__header__title" *ngIf="editStatus">{{'admin.category.template.editTitle' | translate}}</h4>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body template__body">
+    <input
+      type="text"
+      placeholder="{{'admin.category.template.body.name' | translate}}..."
+      class="template__body__input"
+      [(ngModel)]="newCategory"
+      name="newCategory"
+    />
+    <input
+      type="text"
+      placeholder="{{'admin.category.template.body.nameUkr' | translate}}..."
+      class="template__body__input"
+      [(ngModel)]="newCategoryUkr"
+      name="newCategoryUkr"
+    />
+  </div>
+  <div class="modal-footer template__footer">
+    <input
+      type="button"
+      value="{{'admin.category.template.footer.closeBtn' | translate}}"
+      class="btn template__footer__button"
+      (click)="modalRef.hide()"
+    />
+    <input
+      type="button"
+      *ngIf="!newCategory && !editStatus"
+      value="{{'admin.category.template.footer.addBtn' | translate}}"
+      class="btn template__footer__button"
+      disabled
+    />
+    <input
+      type="button"
+      *ngIf="newCategory && !editStatus"
+      value="{{'admin.category.template.footer.addBtn' | translate}}"
+      class="btn template__footer__button"
+      (click)="addCategory()"
+    />
+    <input
+      type="button"
+      *ngIf="editStatus"
+      value="{{'admin.category.template.footer.saveChangesBtn' | translate}}"
+      class="btn template__footer__button"
+      (click)="saveEditCategory()"
+    />
+  </div>
+</ng-template>
+
+<ng-template #deleteTemplate>
+  <div class="modal-body deleteTemplate__body" style="margin: 0 auto">
+    <input
+      type="button"
+      value="{{'admin.category.deleteTemplate.dismissBtn' | translate}}"
+      (click)="dismissCategory()"
+      class="btn deleteTemplate__body__button"
+      style="margin-right: 10px"
+    />
+    <input
+      type="button"
+      value="{{'admin.category.deleteTemplate.deleteBtn' | translate}}"
+      (click)="deleteCategory(deleteCat)"
+      class="btn deleteTemplate__body__buttonDanger"
+    />
+  </div>
+</ng-template>

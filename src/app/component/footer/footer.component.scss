@@ -1,0 +1,60 @@
+$base-color-green: #59b567;
+$base-color-grey: #999999;
+$base-font: "Comfortaa-Medium";
+
+footer {
+  background-color: $base-color-green;
+  padding: 15px;
+  a {
+    color: black;
+    text-decoration: none;
+    font-family: $base-font;
+  }
+  .col {
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .col-2 {
+    align-self: center;
+  }
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 200px;
+  }
+  h3,
+  p {
+    font-family: $base-font;
+  }
+  .links{
+      display: flex;
+      &__nutrition{
+        align-self: center;
+        margin-right: 30px;
+        margin-left: 30px;
+      }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  footer {
+    .row {
+      display: block;
+    }
+    .col-2 {
+      margin-top: 15px;
+    }
+    .links {
+      margin-top: 20px;
+      &__nutrition {
+        left: 52%;
+        margin-top: 95px;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
+    }
+  }
+}

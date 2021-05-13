@@ -1,0 +1,226 @@
+<div class="profile">
+  <h2 class="profile__title"> {{'profile.title' | translate}}</h2>
+  <div class="profile__add">
+    <div class="profile__add__info">
+      <div class="profile__add__info__area">
+        <span class="profile__add__info__area__title">{{'profile.info.name' | translate}}:</span
+        ><span class="profile__add__info__area__data">{{ userName }}</span>
+      </div>
+      <div class="profile__add__info__area">
+        <span class="profile__add__info__area__title">{{'profile.info.email' | translate}}:</span
+        ><span  class="profile__add__info__area__data">{{ userEmail }}</span>
+      </div>
+      <div class="profile__add__info__area">
+        <span class="profile__add__info__area__title">{{'profile.info.address' | translate}}:</span
+        ><span  class="profile__add__info__area__data">{{ userAddress }}</span>
+      </div>
+      <div class="profile__add__info__area">
+        <span class="profile__add__info__area__title">{{'profile.info.phone' | translate}}:</span
+        ><span  class="profile__add__info__area__data">{{ userPhone }}</span>
+      </div>
+      <!-- <div>
+      <span style="color: black;text-align: center;">Preferences:</span>
+      <div class="col" style="padding-left: 103px;">
+        <span>Meat:{{optionMeat}}</span> <br>
+        <span>Fish:{{optionFish}}</span><br>
+        <span>Dairy products:{{optionDairyProduct}}</span> <br>
+        <span>Sugar:{{optionSugar}}</span> <br>
+        <span>Gluten:{{optionGluten}}</span> <br>
+      </div>
+    </div> -->
+    </div>
+  </div>
+  <div class="profile__buttons">
+    <button class="btn profile__buttons__button" (click)="logOut()">{{'profile.logoutBtn' | translate}}</button>
+    <button class="btn profile__buttons__button" (click)="openModal(template)">{{'profile.editBtn' | translate}}</button>
+  </div>
+  <div class="profile__orders">
+    <table class="profile__orders__table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col" class="text-center">{{'profile.table.head.orders' | translate}}</th>
+          <th scope="col" class="text-center">{{'profile.table.head.totalPrice' | translate}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of personalOrders; let i = index">
+          <td class="profile__orders__table__body__text">{{ i + 1 }}</td>
+          <td>
+            <ul *ngFor="let dishes of order.dishesForOrder">
+              <li class="profile__orders__table__body__text">{{ dishes.count }} x {{ dishes.name }}</li>
+            </ul>
+          </td>
+          <td class="text-center profile__orders__table__body__text">{{ order.totalPayment }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{'profile.modal.title' | translate}}</h4>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+
+  <div class="modal-body modal__body">
+    <div class="container modal__body__container">
+      <div class="row">
+        <div class="col-3">
+          <p class="modal__body__container__title">{{'profile.modal.body.firstName' | translate}}:</p>
+        </div>
+        <div class="col-9">
+          <input
+            type="text"
+            class="modal__body__container__editInput"
+            [(ngModel)]="editFirstName"
+            name="editFirstName"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container modal__body__container">
+      <div class="row">
+        <div class="col-3">
+          <p class="modal__body__container__title">{{'profile.modal.body.lastName' | translate}}:</p>
+        </div>
+        <div class="col-9">
+          <input
+            type="text"
+            class="modal__body__container__editInput"
+            [(ngModel)]="editLastName"
+            name="editLastName"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container modal__body__container">
+      <div class="row">
+        <div class="col-3">
+          <p class="modal__body__container__title">{{'profile.modal.body.email' | translate}}:</p>
+        </div>
+        <div class="col-9">
+          <input
+            type="text"
+            class="modal__body__container__editInput"
+            [(ngModel)]="editEmail"
+            name="editEmail"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container modal__body__container">
+      <div class="row">
+        <div class="col-3">
+          <p class="modal__body__container__title">{{'profile.modal.body.address' | translate}}:</p>
+        </div>
+        <div class="col-9">
+          <input
+            type="text"
+            class="modal__body__container__editInput"
+            [(ngModel)]="editAddress"
+            name="editAddress"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container modal__body__container">
+      <div class="row">
+        <div class="col-3">
+          <p class="modal__body__container__title">{{'profile.modal.body.phone' | translate}}:</p>
+        </div>
+        <div class="col-9">
+          <input
+            type="text"
+            class="modal__body__container__editInput"
+            [(ngModel)]="editPhone"
+            name="editPhone"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-5 pt-0">Do you eat meat?</legend>
+        <input type="radio" (click)="Meat(options[0].name)" class="col-1" [checked]='meat' name="optionMeat"
+          value="options[0].name">
+        <p>Yes</p><br>
+        <input type="radio" (click)="Meat(options[1].name)" class="col-1" [checked]='!meat' name="optionMeat"
+          value="options[1].name">
+        <p>No</p> <br>
+
+      </div>
+    </fieldset>
+    <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-5 pt-0">Do you eat fish?</legend>
+        <input type="radio" (click)="Fish(options[0].name)" class="col-1" [checked]='fish' name="optionFish"
+          value="options[0].name">
+        <p>Yes</p><br>
+        <input type="radio" (click)="Fish(options[1].name)" class="col-1" [checked]='!fish' name="optionFish"
+          value="options[1].name">
+        <p>No</p> <br>
+
+      </div>
+    </fieldset>
+    <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-5 pt-0">Do you eat dairy products?</legend>
+        <input type="radio" (click)="DairyProducts(options[0].name)" class="col-1" [checked]='dairyProducts'
+          name="optionDairyProducts" value="options[0].name">
+        <p>Yes</p><br>
+        <input type="radio" (click)="DairyProducts(options[1].name)" class="col-1" [checked]='!dairyProducts'
+          name="optionDairyProducts" value="options[1].name">
+        <p>No</p> <br>
+
+      </div>
+    </fieldset>
+    <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-5 pt-0">Do you eat sugar?</legend>
+        <input type="radio" (click)="Sugar(options[0].name)" class="col-1" [checked]='sugar' name="optionSugar"
+          value="options[0].name">
+        <p>Yes</p><br>
+        <input type="radio" (click)="Sugar(options[1].name)" class="col-1" [checked]='!sugar' name="optionSugar"
+          value="options[1].name">
+        <p>No</p> <br>
+
+      </div>
+    </fieldset>
+    <fieldset class="form-group">
+      <div class="row">
+        <legend class="col-form-label col-5 pt-0">Do you eat dishes with gluten?</legend>
+        <input type="radio" (click)="Gluten(options[0].name)" class="col-1" [checked]='gluten' name="optionGluten"
+          value="options[0].name">
+        <p>Yes</p><br>
+        <input type="radio" (click)="Gluten(options[1].name)" class="col-1" [checked]='!gluten' name="optionGluten"
+          value="options[1].name">
+        <p>No</p> <br>
+
+      </div>
+    </fieldset> -->
+  </div>
+
+  <div class="modal-footer modal__footer">
+    <input
+      type="button"
+      value="{{'profile.modal.footer.closeBtn' | translate}}"
+      class="btn modal__footer__button"
+      (click)="close()"
+    />
+    <input
+      type="button"
+      value="{{'profile.modal.footer.saveChanges' | translate}}"
+      class="btn modal__footer__button"
+      (click)="saveEditProfile()"
+    />
+  </div>
+</ng-template>

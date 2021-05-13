@@ -1,0 +1,143 @@
+h1,
+td,
+p,
+a,
+h2,
+h4,
+label,
+small,
+input[type="text"],
+input[type="button"] {
+  color: black;
+  font-family: "Comfortaa-Medium";
+}
+
+.basket {
+  min-height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.basket__container {
+  width: 85%;
+}
+
+.basket__container__table th {
+  color: black;
+  font-family: "Comfortaa-Medium";
+}
+
+.basket__container__table__dishCount {
+  width: 150px;
+}
+
+.basket__container__table__dishCount__counter {
+  border-radius: 15px;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #59b567;
+  color: black;
+}
+
+.basket__container__table__deleteBtn {
+  background-color: #59b567;
+  color: black;
+}
+
+.basket__container__makeBtns {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.basket__container__makeBtns__button {
+  background-color: #59b567;
+  width: 50%;
+  color: black;
+  margin: 15px;
+}
+
+.basket__emptyness {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.template__footer__button {
+  background-color: #59b567;
+  color: black;
+}
+
+@media screen and (max-width: 1200px) {
+  td input[type="text"] {
+    width: 130px;
+    margin: 5px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .makeOrderButton {
+    width: 55%;
+  }
+  table {
+    max-width: 100%;
+    display: block;
+    overflow: auto;
+  }
+  .count {
+    margin: 0 auto;
+  }
+  .count input[type="text"] {
+    width: 30px;
+    margin: 5px;
+    vertical-align: middle;
+  }
+  .count .count1 {
+    vertical-align: top;
+    width: 30px;
+    margin: 5px;
+  }
+  .count .count2 {
+    vertical-align: bottom;
+    width: 30px;
+    margin: 5px;
+  }
+  .count:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 0px;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+}
+/*# sourceMappingURL=basket.component.css.map */

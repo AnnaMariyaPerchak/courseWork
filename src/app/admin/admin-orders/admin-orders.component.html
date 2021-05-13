@@ -1,0 +1,41 @@
+<div class="col-12 adminOrders">
+  <div class="container adminOrders__head">
+    <div class="row">
+      <p class="col-9 adminOrders__head__title"> {{'admin.orders.title' | translate}}</p>
+    </div>
+  </div>
+  <input
+    type="text"
+    placeholder="{{'admin.orders.searchField' | translate}}"
+    class="adminOrders__filter"
+    [(ngModel)]="searchName"
+    name="searchName"
+  />
+  <hr />
+  <table class="table table-bordered adminOrders__table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">{{'admin.orders.table.user.name' | translate}}</th>
+        <th scope="col">{{'admin.orders.table.user.address' | translate}}</th>
+        <th scope="col">{{'admin.orders.table.user.phone' | translate}}</th>
+        <th scope="col">{{'admin.orders.table.dishes' | translate}}</th>
+        <th scope="col">{{'admin.orders.table.price' | translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of arrayOrders | search: searchName; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ order.user.firstName }} {{ order.user.lastName }}</td>
+        <td>{{ order.user.address }}</td>
+        <td>{{ order.user.phone }}</td>
+        <td>
+          <ul *ngFor="let dishes of order.dishesForOrder">
+            <li> {{ dishes.name }} - {{ dishes.count }} x {{dishes.price}}</li>
+          </ul>
+        </td>
+        <td>{{ order.totalPayment }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

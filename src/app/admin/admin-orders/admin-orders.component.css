@@ -1,0 +1,42 @@
+.adminOrders {
+  min-height: 515px;
+}
+
+.adminOrders__head {
+  padding: 5px 5px 0 45px;
+  margin: 20px;
+}
+
+.adminOrders__head__title {
+  line-height: 30px;
+  font-size: 35px;
+  color: #59b567;
+  font-family: "Comfortaa-Medium";
+}
+
+.adminOrders__filter {
+  width: 100%;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid #999999;
+  padding: 11px 18px;
+  font-family: "Comfortaa-Medium";
+  font-size: 18px;
+}
+
+.adminOrders__filter:focus {
+  outline: none;
+}
+
+.adminOrders__table {
+  font-family: "Comfortaa-Medium";
+}
+
+.adminOrders__table thead {
+  background-color: #59b567;
+}
+
+.adminOrders__table td {
+  color: black;
+}
+/*# sourceMappingURL=admin-orders.component.css.map */

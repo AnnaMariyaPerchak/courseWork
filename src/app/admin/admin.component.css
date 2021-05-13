@@ -1,0 +1,18 @@
+.adminNav__buttons__option {
+  background-color: #59b567;
+  margin-bottom: 5px;
+  line-height: 30px;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: "Comfortaa-Medium";
+}
+
+.adminNav__buttons__logOut {
+  margin-top: 30px;
+  background-color: #999999;
+  line-height: 30px;
+  font-size: 18px;
+  text-decoration: none;
+  font-family: "Comfortaa-Medium";
+}
+/*# sourceMappingURL=admin.component.css.map */

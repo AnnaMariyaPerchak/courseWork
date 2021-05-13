@@ -1,0 +1,138 @@
+span,
+p,
+h2,
+h1 {
+  font-family: "Comfortaa-Medium";
+  color: black;
+}
+
+.nutritions__container {
+  justify-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.nutritions__container__card {
+  width: 300px;
+  border: none;
+  margin: 15px;
+  padding: 0;
+  background-color: #dbdbdb;
+}
+
+.nutritions__container__card__imageDiv {
+  height: auto;
+  overflow: hidden;
+}
+
+.nutritions__container__card__imageDiv__image {
+  width: 300px;
+  height: auto;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.nutritions__container__card__imageDiv__image:hover {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.nutritions__container__card__body {
+  margin: 20px;
+}
+
+.nutritions__container__card__body__name {
+  font-family: "Comfortaa-Medium";
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 35px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.nutritions__container__card__body__details {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0;
+  text-decoration: underline;
+  color: #59b567;
+}
+
+.nutritions__container__card__body__kcalPrice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nutritions__container__card__body__kcalPrice__kcal {
+  text-align: end;
+  width: 100%;
+}
+
+.nutritions__container__card__body__kcalPrice__price, .nutritions__container__card__body__kcalPrice__kcal {
+  color: black;
+  font-family: "Comfortaa-Medium";
+  font-size: 15px;
+  margin: 18px 23px;
+}
+
+.nutritions__container__card__body__orderButtons {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.nutritions__container__card__body__orderButtons__basketButton {
+  background-color: #59b567;
+  color: black;
+}
+
+.nutritions__container__card__body__orderButtons__count {
+  margin: auto;
+  font-size: 20px;
+}
+
+.nutritions__container__card__body__buttons__order {
+  display: block;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: 2px solid #59b567;
+  border-radius: 20px;
+}
+
+.template__body__title {
+  font-family: "Comfortaa-Medium";
+  font-size: 20px;
+  color: #59b567;
+  text-decoration: underline;
+}
+
+.template__body__exampleMenu {
+  font-family: "Comfortaa-Medium";
+  font-size: 18px;
+}
+
+.template__body__exampleMenu__title {
+  color: #59b567;
+}
+
+.template__body__button {
+  width: 100px;
+  background-color: #59b567;
+  border-radius: 15px;
+  font-family: "Comfortaa-Medium";
+  font-size: 18px;
+  display: block;
+  margin: 0 0 0 auto;
+}
+/*# sourceMappingURL=nutrion-programs.component.css.map */

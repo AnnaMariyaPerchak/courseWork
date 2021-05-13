@@ -1,0 +1,371 @@
+{
+	"admin": {
+		"category": {
+			"deleteTemplate": {
+				"deleteBtn": "Delete",
+				"dismissBtn": "Dismiss"
+			},
+			"head": {
+				"addBtn": "Add",
+				"title": "Category"
+			},
+			"searchField": "find category",
+			"table": {
+				"deleteBtn": "Delete",
+				"editBtn": "Edit",
+				"name": "Name(en)",
+				"nameUkr": "Name(ukr)"
+			},
+			"template": {
+				"addTitle": "Add new category",
+				"body": {
+					"name": "name in English here",
+					"nameUkr": "name in ukrainian here"
+				},
+				"editTitle": "Edit category",
+				"footer": {
+					"addBtn": "Add",
+					"closeBtn": "Close",
+					"saveChangesBtn": "Save changes"
+				}
+			}
+		},
+		"dishes": {
+			"deleteTemplate": {
+				"deleteBtn": "Delete",
+				"dismissBtn": "Dismiss"
+			},
+			"head": {
+				"addBtn": "Add",
+				"title": "Dishes"
+			},
+			"searchField": "find dish",
+			"table": {
+				"deleteBtn": "Delete",
+				"editBtn": "Edit",
+				"en": "En",
+				"head": {
+					"category": "Category",
+					"description": "Description",
+					"image": "Image",
+					"name": "Name",
+					"price": "Price",
+					"weight": "Weight"
+				},
+				"ukr": "Ukr"
+			},
+			"template": {
+				"body": {
+					"description": "Description(en)",
+					"descriptionUkr": "Description(ukr)",
+					"image": "Choose file",
+					"name": "Name(en)",
+					"nameUkr": "Name(ukr)",
+					"option": "Open this select menu",
+					"price": "Price",
+					"weight": "Weight"
+				},
+				"footer": {
+					"addBtn": "Add",
+					"closeBtn": "Close",
+					"saveChangesBtn": "Save changes"
+				},
+				"head": {
+					"addTitle": "Add new dish",
+					"editTitle": "Edit dish"
+				}
+			}
+		},
+		"nutritions": {
+			"deleteTemplate": {
+				"deleteBtn": "Delete",
+				"dismissBtn": "Dismiss"
+			},
+			"head": {
+				"addBtn": "Add",
+				"title": "Nutrition programs"
+			},
+			"searchField": "find nutrition program",
+			"table": {
+				"category": "Category",
+				"deleteBtn": "Delete",
+				"description": "Description",
+				"editBtn": "Edit",
+				"en": "En",
+				"kcal": "Kcal",
+				"name": "Name",
+				"price": "Price",
+				"ukr": "Ukr"
+			},
+			"template": {
+				"body": {
+					"category": {
+						"men": "for men",
+						"option": "Open this select menu",
+						"title": "Category",
+						"women": "for women"
+					},
+					"nutrition": {
+						"breakfast": "Breakfast(en)",
+						"breakfastUkr": "Breakfast(ukr)",
+						"firstDinner": "First dinner(en)",
+						"firstDinnerUkr": "First dinner(ukr)",
+						"kcal": "Kcal",
+						"lunch": "Lunch(en)",
+						"lunchUkr": "Lunch(ukr)",
+						"name": "Name(en)",
+						"nameUkr": "Name(ukr)",
+						"price": "Price",
+						"secondDinner": "Second dinner(en)",
+						"secondDinnerUkr": "Second dinner(ukr)",
+						"supper": "Supper(en)",
+						"supperUkr": "Supper(ukr)"
+					}
+				},
+				"footer": {
+					"addBtn": "Add",
+					"closeBtn": "Close",
+					"saveChangesBtn": "Save changes"
+				},
+				"head": {
+					"addTitle": "Add new dish",
+					"editTitle": "Edit dish"
+				}
+			}
+		},
+		"orders": {
+			"searchField": "find order",
+			"table": {
+				"dishes": "Dishes from order",
+				"price": "Total price",
+				"user": {
+					"address": "User address",
+					"name": "User name",
+					"phone": "User phone"
+				}
+			},
+			"title": "Orders"
+		},
+		"panel": {
+			"category": "Category",
+			"dishes": "Dishes",
+			"logOutBtn": "Log out",
+			"nutrition": "Programs",
+			"orders": "Orders"
+		}
+	},
+	"basket": {
+		"checkModal": {
+			"body": {
+				"button": "Done",
+				"flat": "Flat",
+				"house": "House",
+				"street": "Street"
+			},
+			"header": {
+				"title": "There you can change delivery`s address"
+			}
+		},
+		"emptyness": "Basket is empty",
+		"makeOrderBtn": "MAKE AN ORDER",
+		"makeOrderModal": {
+			"body": {
+				"address": "Address",
+				"email": "Email",
+				"firstName": "First name",
+				"lastName": "Last name",
+				"phone": "Phone",
+				"subtitle": "If you want to make an order,you need to specify delivery details."
+			},
+			"footer": {
+				"closeBtn": "Close",
+				"makeOrder": "Make an order"
+			},
+			"header": {
+				"title": " Make an order"
+			}
+		},
+		"modal": {
+			"title": "Your order is being prepared"
+		},
+		"table": {
+			"body": {
+				"delete": "Delete"
+			},
+			"head": {
+				"count": "Count",
+				"delete": "Delete",
+				"name": "Name",
+				"price": "Price",
+				"total": "Total"
+			}
+		},
+		"tite": "Orders",
+		"totalPrice": "Total price {{totalPrice}} grn"
+	},
+	"dish": {
+		"currency": "grn",
+		"description": "Dish description",
+		"order": "Order",
+		"orderIngredients": "Order ingredients"
+	},
+	"footer": {
+		"info": {
+			"location": "Our location: Lviv",
+			"phone": "Our phone number : ",
+			"title": "Information about us"
+		},
+		"links": {
+			"bowl": "Bowl",
+			"desserts": "Desserts",
+			"fish": "Fish",
+			"meat": "Meat",
+			"pasta": "Pasta",
+			"programs": {
+				"men": "For men",
+				"title": "Nutrition programs",
+				"women": "For women"
+			},
+			"salad": "Salad",
+			"smoothie": "Smoothie",
+			"soup": "Soup"
+		}
+	},
+	"header": {
+		"adminPage": "Admin",
+		"basket": "Basket : {{ totalPrice }} grn",
+		"courierPage": "Courier",
+		"food": "Our food",
+		"foodBowl": "Bowl",
+		"foodDesserts": "Desserts",
+		"foodFish": "Fish",
+		"foodMeat": "Meat",
+		"foodPasta": "Pasta",
+		"foodSalad": "Salad",
+		"foodSmoothie": "Smoothie",
+		"foodSoup": "Soup",
+		"logIn": "Log in",
+		"programs": "Nutritions programs",
+		"programsMen": "For men",
+		"programsWomen": "For women",
+		"userPage": "Cabinet"
+	},
+	"home": {
+		"advantages": {
+			"delicious": {
+				"first": "Experienced chef and professional cuisine",
+				"second": "Healthy desserts",
+				"third": "Healthy candies with delivery",
+				"title": "Delicious"
+			},
+			"qualitative": {
+				"first": "Cook & Chill shock cooling technology",
+				"second": "The best service according to the results of the rating of the Ukrainian People's Prize-2018 and 2019",
+				"third": "Recommended by the Association of Nutritionists of Ukraine",
+				"title": "Qualitative"
+			},
+			"usefull": {
+				"first": "Products from local farmers and certified suppliers",
+				"second": "Healthy cooking methods - baking, combi oven, dryer",
+				"third": "The optimal salt content",
+				"title": "Usefull"
+			},
+			"variable": {
+				"first": "More than 50 dishes",
+				"second": "Seasonal menu updates",
+				"third": "More than 15 nutrition programs developed by a nutritionist",
+				"title": "Variable"
+			}
+		},
+		"intro": {
+			"leftFirst": "LET’S START WITH GOOD CLEAN FOOD",
+			"leftSecon": "Delivered to your door, and ready in minutes."
+		},
+		"menuExamples": {
+			"dishes": {
+				"bowl": "Bowl",
+				"dessert": "Desserts",
+				"fish": "Fish",
+				"meat": "Meat",
+				"pasta": "Pasta",
+				"salad": "Salad",
+				"smoothie": "Smoothie",
+				"soup": "Soup"
+			},
+			"titleFirst": "Actually healthy.",
+			"titleSecond": "Undeniably delicious."
+		}
+	},
+	"logIn": {
+		"form": {
+			"email": "Email",
+			"logInBtn": "Log in",
+			"password": "Password",
+			"routing": {
+				"signUp": "Sign up",
+				"title": "Don`t have an account?"
+			}
+		}
+	},
+	"nutrition": {
+		"currency": "grn",
+		"details": "More about program",
+		"kcal": "kcal",
+		"order": "Order",
+		"template": {
+			"breakfast": "Breakfast",
+			"closeBtn": "Close",
+			"firstDinner": "First dinner",
+			"lunch": "Lunch",
+			"secondDinner": "Second dinner",
+			"supper": "Supper",
+			"title": "Dish examples of nutrition program "
+		}
+	},
+	"profile": {
+		"editBtn": "Edit profile",
+		"info": {
+			"address": "Address",
+			"email": "Email",
+			"name": "Name",
+			"phone": "Phone"
+		},
+		"logoutBtn": "Log out",
+		"modal": {
+			"body": {
+				"address": "Address",
+				"email": "Email",
+				"firstName": "First name",
+				"lastName": "Last name",
+				"phone": "Phone"
+			},
+			"footer": {
+				"closeBtn": "Close",
+				"saveChanges": "Save changes"
+			},
+			"title": "Edit profile"
+		},
+		"table": {
+			"head": {
+				"orders": "Orders",
+				"totalPrice": "Total price"
+			}
+		},
+		"title": "Personal information"
+	},
+	"signUp": {
+		"form": {
+			"address": "Address",
+			"email": "Email",
+			"firstName": "First name",
+			"lastName": "Last name",
+			"password": "Password",
+			"phone": "phone",
+			"routing": {
+				"logIn": "Log in",
+				"title": "Already have an account?"
+			},
+			"signUpBtn": "Sign up"
+		}
+	}
+}

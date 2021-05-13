@@ -1,0 +1,38 @@
+$base-color-green: #59b567;
+$base-color-grey: #999999;
+$base-font: "Comfortaa-Medium";
+
+.adminOrders {
+  min-height: 515px;
+  &__head {
+    padding: 5px 5px 0 45px;
+    margin: 20px;
+    &__title {
+      line-height: 30px;
+      font-size: 35px;
+      color: $base-color-green;
+      font-family: $base-font;
+    }
+  }
+  &__filter {
+    width: 100%;
+    margin: 5px;
+    border-radius: 20px;
+    border: 1px solid $base-color-grey;
+    padding: 11px 18px;
+    font-family: "Comfortaa-Medium";
+    font-size: 18px;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__table {
+    font-family: $base-font;
+    thead {
+      background-color: $base-color-green;
+    }
+    td {
+      color: black;
+    }
+  }
+}

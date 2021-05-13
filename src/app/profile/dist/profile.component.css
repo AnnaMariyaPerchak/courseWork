@@ -1,0 +1,122 @@
+h2,
+p,
+h4,
+input[type=text],
+span,
+button,
+li,
+td,
+legend {
+  color: #59b567;
+  font-family: "Comfortaa-Medium";
+}
+
+.profile {
+  margin-top: 20px;
+}
+.profile__title {
+  text-align: center;
+  margin-left: 100px;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 12px;
+}
+.profile__add {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.profile__add__info {
+  border: 3px solid #999999;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  width: 30%;
+}
+.profile__add__info__area {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.profile__add__info__area__title {
+  text-align: center;
+  color: #999;
+  text-decoration: underline;
+}
+.profile__add__info__area__data {
+  padding-left: 55px;
+}
+.profile__buttons {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.profile__buttons__button {
+  background-color: #59b567;
+  width: 15%;
+  color: black;
+  margin: 15px;
+}
+.profile__orders {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: 15px;
+}
+.profile__orders__table {
+  width: 65%;
+}
+.profile__orders__table thead {
+  background-color: #999;
+}
+.profile__orders__table thead th {
+  color: black;
+  padding: 15px;
+  font-size: 16px;
+  background-color: #59b567;
+}
+.profile__orders__table tbody td {
+  padding: 15px;
+}
+.profile__orders__table__body__text {
+  color: #999;
+  font-size: 17px;
+}
+
+.modal__body__container {
+  margin: 10px;
+}
+.modal__body__container__editInput {
+  padding: 7px;
+  border-radius: 10px;
+  border: 2px solid #999;
+  width: 100%;
+  font-size: 17px;
+}
+.modal__body__container__title {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: #999;
+  text-decoration: underline;
+  font-size: 17px;
+}
+.modal__footer__button {
+  background-color: #59b567;
+  width: 30%;
+  color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .personal_info {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .personal_info {
+    width: 95%;
+  }
+
+  .makeOrderButton {
+    width: 65%;
+  }
+}

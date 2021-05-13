@@ -1,0 +1,102 @@
+$base-color-green: #59b567;
+$base-color-grey: #999999;
+$base-font: "Comfortaa-Medium";
+
+.adminCategory {
+min-height: 515px;
+  &__head {
+    padding: 5px 5px 0 45px;
+    margin: 20px;
+    &__title {
+      line-height: 30px;
+      font-size: 35px;
+      color: $base-color-green;
+      font-family: $base-font;
+    }
+    &__button{
+      width: 150px;
+      background-color: $base-color-green;
+      border-radius: 15px;
+      font-family: $base-font;
+      font-size: 20px;
+    }
+  }
+  &__filter {
+    width: 100%;
+    margin: 5px;
+    border-radius: 20px;
+    border: 1px solid $base-color-grey;
+      padding: 11px 18px;
+      font-family: "Comfortaa-Medium";
+      font-size: 18px;
+    &:focus{
+        outline: none;
+    }
+  }
+  &__table{
+    font-family: $base-font;
+      thead{
+        background-color: $base-color-green;
+      }
+      &__button{
+        width: 150px;
+        background-color: $base-color-green;
+        border-radius: 15px;
+        font-family: $base-font;
+        font-size: 20px;
+      }
+      td{
+          color: black;
+      }
+  }
+}
+
+.template{
+    &__header{
+      padding: 15px 15px 0px 15px;
+        &__title{
+            color: black;
+            font-family: $base-font;
+            font-size: 23px;
+        }
+    }
+    &__body{
+        &__input{
+            width: 100%;
+    margin: 5px;
+    border-radius: 20px;
+    border: 1px solid $base-color-grey;
+      padding: 11px 18px;
+      font-family: "Comfortaa-Medium";
+      font-size: 18px;
+    &:focus{
+        outline: none;
+    }
+        }
+    }
+    &__footer{
+        &__button{
+            width: 120px;
+      background-color: $base-color-green;
+      border-radius: 15px;
+      font-family: $base-font;
+      font-size: 18px;
+        }
+    }
+}
+
+.deleteTemplate{
+    &__body{
+        &__button,&__buttonDanger{
+            width: 100px;
+      background-color: $base-color-green;
+      border-radius: 15px;
+      font-family: $base-font;
+      font-size: 18px;
+        }
+        &__buttonDanger{
+            background-color: red;
+            margin-left: 10px;
+        }
+    }
+}

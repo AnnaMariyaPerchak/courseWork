@@ -1,0 +1,37 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a [routerLink]="[ '/home']">
+                    <img src="../../../assets/images/logoFooter.png" alt="lapiec-logo">
+                </a>
+            </div>
+            <div class="links">
+                <div class="col-2" class="links__food">
+                    <ul>
+                        <li><a [routerLink]="[ '/menu/soup']">{{'footer.links.soup'|translate}}</a></li>
+                        <li><a [routerLink]="[ '/menu/pasta']">{{'footer.links.pasta'|translate}}</a></li>
+                        <li><a [routerLink]="[ '/menu/bowl']">{{'footer.links.bowl'|translate}}</a></li>
+                        <li><a [routerLink]="[ '/menu/fish']">{{'footer.links.fish'|translate}}</a></li>
+                        <li><a [routerLink]="[ '/menu/meat']">{{'footer.links.meat'|translate}}</a></li>
+                        <li><a [routerLink]="[ '/menu/salad']">{{'footer.links.salad'|translate}}</a></li>
+                        <li><a [routerLink]="[ '/menu/desserts']">{{'footer.links.desserts'|translate}}</a></li>
+                        <li><a [routerLink]="[ '/menu/smoothie']">{{'footer.links.smoothie'|translate}}</a></li>
+                    </ul>
+                </div>
+                <div class="col" class="links__nutrition">
+                    <p> {{'footer.links.programs.title'|translate}} </p>
+                    <ul>
+                        <li><a [routerLink]="[ '/nutrition/nutrition programs for women']">{{'footer.links.programs.women'|translate}}</a></li>
+                        <li><a [routerLink]="[ '/nutrition/nutrition programs for men']">{{'footer.links.programs.men'|translate}}</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <h3>{{'footer.info.title'|translate}}</h3>
+                <p>{{'footer.info.location'|translate}}</p>
+                <p>{{'footer.info.phone'|translate}} <a href="tel:+380671234567">+380671234567</a> </p>
+            </div>
+        </div>
+    </div>
+</footer>

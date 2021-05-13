@@ -1,0 +1,128 @@
+$base-color-green: #59b567;
+$base-color-grey: black;
+$base-font: "Comfortaa-Medium";
+
+h1,
+td,
+p,
+a,
+h2,
+h4,
+label,
+small,
+input[type="text"],
+input[type="button"] {
+  color: $base-color-grey;
+  font-family: $base-font;
+}
+
+.basket {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__container {
+    width: 85%;
+    &__table {
+      th {
+        color: black;
+        font-family: "Comfortaa-Medium";
+      }
+      &__dishCount{
+        width: 150px;
+        &__counter {
+            border-radius: 15px;
+            width: 20px;
+            height: 20px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-color: $base-color-green;
+            color: black;
+          }
+      }
+      &__deleteBtn{
+        background-color:$base-color-green;
+        color: black;
+      }
+    }
+    &__makeBtns{
+        justify-content: center;
+        display: flex; 
+        align-items: center;
+        &__button{
+            background-color: $base-color-green;
+  width: 50%;
+  color: black;
+  margin: 15px;
+        }
+    }
+  }
+  &__emptyness{
+    justify-content: center;
+    display: flex; 
+    align-items: center;
+  }
+}
+
+.template{
+    &__footer{
+        &__button{
+            background-color: $base-color-green;
+            color: black;
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 1200px) {
+  td {
+    input[type="text"] {
+      width: 130px;
+      margin: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 425px) {
+  .makeOrderButton {
+    width: 55%;
+  }
+  table {
+    max-width: 100%;
+    display: block;
+    overflow: auto;
+  }
+  .count {
+    margin: 0 auto;
+    input[type="text"] {
+      width: 30px;
+      margin: 5px;
+      vertical-align: middle;
+    }
+    .count1 {
+      vertical-align: top;
+      width: 30px;
+      margin: 5px;
+    }
+    .count2 {
+      vertical-align: bottom;
+      width: 30px;
+      margin: 5px;
+    }
+  }
+  .count:after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 0px;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+}

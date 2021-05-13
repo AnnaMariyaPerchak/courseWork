@@ -1,0 +1,24 @@
+$base-color-green: #59b567;
+$base-color-grey: #999999;
+$base-font: "Comfortaa-Medium";
+
+.adminNav {
+  &__buttons {
+    &__option {
+      background-color: $base-color-green;
+      margin-bottom: 5px;
+      line-height: 30px;
+      font-size: 18px;
+      text-decoration: none;
+      font-family: $base-font;
+    }
+    &__logOut {
+      margin-top: 30px;
+      background-color: $base-color-grey;
+      line-height: 30px;
+      font-size: 18px;
+      text-decoration: none;
+      font-family: $base-font;
+    }
+  }
+}

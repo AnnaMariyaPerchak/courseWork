@@ -1,0 +1,96 @@
+<!-- <div ng-class="{black: browserLang == 'en', red: browserLang == 'ukr'}" ></div> -->
+
+<!-- <div *ngIf="browserLang==='ukr'">
+  <div class="dishes">
+    <h1 class="text-center">{{ categoryName | titlecase }}</h1>
+    <div class="dishes__container">
+      <div class="dishes__container__card u-clearfix" *ngFor="let dish of dishes; let i = index">
+        <span class="dishes__container__card__number dishes__container__card__circle">{{ i + 1 }}</span>
+        <div class="dishes__container__card__body">
+          <h2 class="dishes__container__card__body__name">{{ dish.nameUkr }}</h2>
+          <div class="dishes__container__card__body__weightPrice">
+            <p class="dishes__container__card__body__weightPrice__addInfo">{{ dish.weight }}</p>
+            <p class="dishes__container__card__body__weightPrice__addInfo">{{ dish.price }}grn</p>
+          </div>
+          <span class="dishes__container__card__body__description">
+            <span class="dishes__container__card__body__description__title">Dish description</span>:
+                {{ dish.description }}</span>
+        </div>
+        <div class="dishes__container__card__right">
+          <img [attr.src]="dish.image" alt="" class="dishes__container__card__right__media" />
+          <div class="dishes__container__card__right__buttons">
+            <div class="d-flex justify-content-between" style="width: 35%; margin: 15px">
+              <button
+                type="button"
+                class="btn dishes__container__card__right__buttons__busketButton"
+                (click)="dishCount(dish, false)"
+                [disabled]="dish.count === 1 ? true : false"
+              >- </button>
+              <p class="dishes__container__card__right__buttons__count">{{ dish.count }}</p>
+              <button
+                type="button"
+                class="btn dishes__container__card__right__buttons__busketButton"
+                (click)="dishCount(dish, true)"
+              > + </button>
+            </div>
+          </div>
+          <div class="dishes__container__card__right__buttons">
+            <button class="btn dishes__container__card__right__buttons__orderButton" (click)="addBasket(dish)">
+              Order
+            </button>
+            <button class="btn dishes__container__card__right__buttons__orderButton" >
+              Order ingredients
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- <div *ngIf="browserLang==='en'"> -->
+  <div class="dishes">
+    <h1 *ngIf="!(browserLang==='ukr')" class="text-center">{{ categoryName | titlecase }}</h1>
+    <h1 *ngIf="browserLang==='ukr'" class="text-center">{{ categoryNameUkr | titlecase }}</h1>
+    <div class="dishes__container">
+      <div class="dishes__container__card u-clearfix" *ngFor="let dish of dishes; let i = index">
+        <span class="dishes__container__card__number dishes__container__card__circle">{{ i + 1 }}</span>
+        <div class="dishes__container__card__body">
+          <h2 *ngIf="!(browserLang==='ukr')" class="dishes__container__card__body__name">{{ dish.name }}</h2>
+          <h2 *ngIf="browserLang==='ukr'" class="dishes__container__card__body__name">{{ dish.nameUkr }}</h2>
+          <div class="dishes__container__card__body__weightPrice">
+            <p class="dishes__container__card__body__weightPrice__addInfo">{{ dish.weight }}</p>
+            <p class="dishes__container__card__body__weightPrice__addInfo">{{ dish.price }} {{'dish.currency' | translate}} </p>
+          </div>
+          <span *ngIf="!(browserLang==='ukr')" class="dishes__container__card__body__description"><span class="dishes__container__card__body__description__title">{{'dish.description' | translate}} </span>:{{ dish.description }}</span>
+          <span *ngIf="browserLang==='ukr'" class="dishes__container__card__body__description"><span  class="dishes__container__card__body__description__title">{{'dish.description' | translate}}</span>:{{ dish.descriptionUkr }}</span>
+        </div>
+        <div class="dishes__container__card__right">
+          <img [attr.src]="dish.image" alt="" class="dishes__container__card__right__media" />
+          <div class="dishes__container__card__right__buttons">
+            <div class="d-flex justify-content-between" style="width: 35%; margin: 15px">
+              <button
+                type="button"
+                class="btn dishes__container__card__right__buttons__busketButton"
+                (click)="dishCount(dish, false)"
+                [disabled]="dish.count === 1 ? true : false"
+              >- </button>
+              <p class="dishes__container__card__right__buttons__count">{{ dish.count }}</p>
+              <button
+                type="button"
+                class="btn dishes__container__card__right__buttons__busketButton"
+                (click)="dishCount(dish, true)"
+              > + </button>
+            </div>
+          </div>
+          <div class="dishes__container__card__right__buttons">
+            <!-- <button class="btn dishes__container__card__right__buttons__orderButton" (click)="addBasket(dish)">Order</button> -->
+            <button class="btn dishes__container__card__right__buttons__orderButton" (click)="addBasket(dish)"> {{'dish.order' | translate}} </button>
+            <!-- <button class="btn dishes__container__card__right__buttons__orderButton" > Order ingredients</button> -->
+            <button class="btn dishes__container__card__right__buttons__orderButton" > {{'dish.orderIngredients' | translate}} </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- </div> -->
+

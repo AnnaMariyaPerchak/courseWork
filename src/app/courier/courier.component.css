@@ -1,0 +1,52 @@
+p, button, th, td {
+  color: #59b567;
+  font-family: "Comfortaa-Medium";
+}
+
+.courier {
+  min-height: 300px;
+}
+
+.courier__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 20px 25px;
+  height: 40px;
+}
+
+.courier__header__name {
+  font-size: 20px;
+  height: 20px;
+  margin: 10px 0;
+}
+
+.courier__header__logOutBtn {
+  position: absolute;
+  right: 20px;
+  color: #999;
+  border: 2px solid #59b567;
+  border-radius: 20px;
+  width: 110px;
+  font-size: 17px;
+}
+
+.courier__table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+}
+
+.courier__table thead th {
+  border-bottom-width: 2px;
+  background-color: #59b567;
+  color: black;
+  border-color: #999;
+}
+
+.courier__table tbody td {
+  border: 1px solid #59b567;
+  color: black;
+}
+/*# sourceMappingURL=courier.component.css.map */

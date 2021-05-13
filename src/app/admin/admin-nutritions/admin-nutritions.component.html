@@ -1,0 +1,240 @@
+<div class="col-12 adminNutritions">
+    <div class="container adminNutritions__head">
+      <div class="row">
+          <p class="col-9 adminNutritions__head__title"> {{'admin.nutritions.head.title' | translate}}</p>
+        <!-- </div> -->
+        <div class="col">
+          <input
+            type="button"
+            (click)="addModal(Template)"
+            value="{{'admin.nutritions.head.addBtn' | translate}}"
+            class="btn adminNutritions__head__button"
+          />
+        </div>
+      </div>
+    </div>
+    <input
+      type="text"
+      placeholder="{{'admin.nutritions.searchField' | translate}}"
+      class="adminNutritions__filter"
+      [(ngModel)]="searchName"
+      name="searchName"
+    />
+    <hr />
+    <table class="table table-bordered adminNutritions__table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+                <th scope="col">{{'admin.nutritions.table.category' | translate}}</th>
+                <!-- <th scope="col">CategoryUkr</th> -->
+                <th scope="col">{{'admin.nutritions.table.name' | translate}}</th>
+                <!-- <th scope="col">NameUkr</th> -->
+                <th scope="col" >{{'admin.nutritions.table.description' | translate}}</th>
+                <th scope="col" >{{'admin.nutritions.table.price' | translate}}</th>
+                <th scope="col" >{{'admin.nutritions.table.kcal' | translate}}</th>
+                <!-- <th scope="col">Edit</th> -->
+                <th scope="col">{{'admin.nutritions.table.editBtn' | translate}} / {{'admin.nutritions.table.deleteBtn' | translate}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let  nutrition of arrayNutritions |search:searchName;let i=index">
+            <td>{{i+1}}</td>
+            <td>
+                <p>{{'admin.nutritions.table.en' | translate}}:{{nutrition.category.name}}</p>
+                <br>
+                <p>{{'admin.nutritions.table.ukr' | translate}}:{{nutrition.category.nameUkr}}</p>
+            </td>
+            <!-- <td>{{nutrition.category.nameUkr}}</td> -->
+            <td>
+                <p>{{'admin.nutritions.table.en' | translate}}:{{nutrition.name}}</p>
+                <br>
+                <p>{{'admin.nutritions.table.ukr' | translate}}:{{nutrition.nameUkr}}</p>
+            </td>
+            <!-- <td>{{nutrition.nameUkr}}</td> -->
+            <td>
+                <p>{{'admin.nutritions.table.en' | translate}}</p>
+                <ul>
+                    <li>{{nutrition.description.breakfast}}</li>
+                    <li>{{nutrition.description.lunch}}</li>
+                    <li>{{nutrition.description.firstDinner}}</li>
+                    <li>{{nutrition.description.supper}}</li>
+                    <li>{{nutrition.description.secondDinner}}</li>
+                </ul>
+                <p>{{'admin.nutritions.table.ukr' | translate}}</p>
+                <ul>
+                    <li>{{nutrition.description.breakfastUkr}}</li>
+                    <li>{{nutrition.description.lunchUkr}}</li>
+                    <li>{{nutrition.description.firstDinnerUkr}}</li>
+                    <li>{{nutrition.description.supperUkr}}</li>
+                    <li>{{nutrition.description.secondDinnerUkr}}</li>
+                </ul>
+            </td>
+            <td>{{nutrition.price}}</td>
+            <td>{{nutrition.kcal}}</td>
+            <!-- <td><input type="button" value="Edit" class="btn adminNutritions__table__button" (click)="editModal(Template,nutrition)"> -->
+            <!-- </td> -->
+            <td>
+                <input type="button" value="{{'admin.nutritions.table.editBtn' | translate}}" class="btn adminNutritions__table__button" (click)="editModal(Template,nutrition)">
+                <!-- <br> -->
+                <!-- <br> -->
+                <input type="button" value="{{'admin.nutritions.table.deleteBtn' | translate}}" class="btn adminNutritions__table__button"
+                    (click)="deleteModal(deleteTemplate,nutrition)">
+            </td>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+
+
+<ng-template #Template>
+    <div class="modal-header template__header">
+        <h4 class="modal-title pull-left template__header__title" *ngIf="!editStatus">{{'admin.nutritions.template.head.addTitle' | translate}}</h4>
+        <h4 class="modal-title pull-left template__header__title" *ngIf="editStatus">{{'admin.nutritions.template.head.editTitle' | translate}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body template__body">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.category.title' | translate}}:</div>
+                <div class="col-8 template__body__select">
+                      <select class="custom-select" [(ngModel)]="newCategory" >
+                        <option selected>{{'admin.nutritions.template.body.category.option' | translate}}</option>
+                            <option value="nutrition programs for men">{{'admin.nutritions.template.body.category.men' | translate}}</option>
+                            <option value="nutrition programs for women">{{'admin.nutritions.template.body.category.women' | translate}}</option>
+                      </select>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.name' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newName" name="newName">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.nameUkr' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newNameUkr" name="newNameUkr">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.breakfast' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newBreakfast" name="newBreakfast">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.breakfastUkr' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newBreakfastUkr" name="newBreakfastUkr">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.lunch' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newLunch" name="newLunch">
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.lunchUkr' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newLunchUkr" name="newLunchUkr">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.firstDinner' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newFirstDinner" name="newFirstDinner">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.firstDinnerUkr' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newFirstDinnerUkr" name="newFirstDinnerUkr">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.supper' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newSupper" name="newSupper">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.supperUkr' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newSupperUkr" name="newSupperUkr">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.secondDinner' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newSecondDinner" name="newSecondDinner">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.secondDinnerUkr' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newSecondDinnerUkr" name="newSecondDinnerUkr">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.price' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newPrice" name="newPrice">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.nutritions.template.body.nutrition.kcal' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newKcal" name="newKcal">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer template__footer">
+        <input type="button" value="{{'admin.nutritions.template.footer.closeBtn' | translate}}" class="btn template__footer__button" (click)="modalRef.hide()">
+        <input type="button" *ngIf="!(newName) && !editStatus" value="{{'admin.nutritions.template.footer.addBtn' | translate}}" class="btn template__footer__button" disabled>
+        <input type="button" *ngIf="newName && !editStatus" value="{{'admin.nutritions.template.footer.addBtn' | translate}}" class="btn template__footer__button"
+            (click)="addNutrition()">
+        <input type="button" *ngIf="editStatus" value="{{'admin.nutritions.template.footer.saveChangesBtn' | translate}}" class="btn template__footer__button"
+            (click)="saveEditNutrition()">
+    </div>
+</ng-template>
+
+ <ng-template #deleteTemplate>
+    <div class="modal-body deleteTemplate__body" >
+        <input type="button" value="{{'admin.nutritions.deleteTemplate.dismissBtn' | translate}}" (click)="dismissNutrition()" class="btn deleteTemplate__body__button">
+        <input type="button" value="{{'admin.nutritions.deleteTemplate.deleteBtn' | translate}}" (click)="deleteNutritionProgram(deleteNutrition)" class="btn deleteTemplate__body__buttonDanger">
+    </div>
+</ng-template>
+

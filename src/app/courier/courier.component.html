@@ -1,0 +1,49 @@
+<div class="courier">
+  
+  <div class="courier__header">
+    <p class="courier__header__name">Courier name: {{ deliveryName }} </p>
+  <button class="btn courier__header__logOutBtn makeOrderButton" (click)="logOut()">Logout</button>
+  </div>
+  
+  <table class="table table-bordered courier__table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <!-- <th scope="col">Order`s id</th> -->
+          <th scope="col">Dishes</th>
+          <th scope="col">Payment</th>
+          <th scope="col">User`s name</th>
+          <th scope="col">User`s phone number</th>
+          <th scope="col">Delivery adress</th>
+          <!-- <th scope="col">Take it</th> -->
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let delivery of arrayDelivered ; let i = index">
+          <td>{{ i + 1 }}</td>
+          <!-- <td>{{ delivery.id }}</td> -->
+          <td>
+              <ul *ngFor="let dishes of delivery.dishesForOrder">
+                <li> {{ dishes.name }} - {{ dishes.count }} x {{dishes.price}}</li>
+              </ul>
+            </td>
+            <td>{{delivery.totalPayment}}</td>
+            <td>{{ delivery.user.firstName }} {{ delivery.user.lastName }}</td>
+            <td>{{ delivery.user.phone }}</td>
+          <td>{{ delivery.user.address }}</td>
+          <!-- <td>
+              <button class="btn makeOrderButton">Take it</button>
+          </td> -->
+          <td >
+            <input type="checkbox" id="done" name="done" [checked]="delivery.inProgress==true" (change)="inProgress(i)"> <label for="done">In progress</label>
+        </td>
+          <td >
+              <input type="checkbox" id="done" name="done" [checked]="delivery.delivered==true" (change)="delete(i)" >
+    <label for="done">Delivered</label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

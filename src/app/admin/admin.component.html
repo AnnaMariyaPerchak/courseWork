@@ -1,0 +1,19 @@
+<div class="container-fluid adminNav">
+    <div class="row">
+      <div class="col-2">
+        <div class="nav flex-column nav-pills adminNav__buttons">
+          <a class="nav-link" [routerLink]="[ 'category' ]" class="btn adminNav__buttons__option" >{{'admin.panel.category'|translate}}</a>
+          <a class="nav-link" [routerLink]="[ 'products' ]" class="btn adminNav__buttons__option" >{{'admin.panel.dishes'|translate}}</a>
+          <a class="nav-link" [routerLink]="[ 'nutritions' ]" class="btn adminNav__buttons__option" >{{'admin.panel.nutrition'|translate}}</a>
+          <a class="nav-link" [routerLink]="[ 'orders' ]" class="btn adminNav__buttons__option" >{{'admin.panel.orders'|translate}}</a>
+          <button class="btn adminNav__buttons__logOut" (click)="logOut()">{{'admin.panel.logOutBtn'|translate}}</button>
+        </div>
+      </div>
+      <div class="col-10">
+        <div class="tab-content">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+  

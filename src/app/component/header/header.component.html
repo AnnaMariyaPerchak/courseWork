@@ -1,0 +1,236 @@
+<nav class="nav justify-content-between">
+
+  <div class="nav__languageBtn">
+    <button class="nav__languageBtn__en" (click)="useLanguage('en')">en</button>
+    <button class="nav__languageBtn__ukr" (click)="useLanguage('ukr')">ukr</button>
+  </div>
+
+  <div class="nav__menu">
+    <div class="nav__menu__item">
+      <span dropdown>
+        <a
+          href
+          id="basic-link"
+          dropdownToggle
+          (click)="(false)"
+          aria-controls="basic-link-dropdown"
+          >{{'header.food' | translate}}</a
+        >
+        <div
+          id="basic-link-dropdown"
+          *dropdownMenu
+          class="dropdown-menu nav__menu__item__foodDropdown"
+          role="menu"
+          aria-labelledby="basic-link"
+        >
+          <a class="dropdown-item" [routerLink]="['/menu/soup']"
+            >{{'header.foodSoup' | translate}}
+            <small style="font-size: xx-small">{{ recomendSoup }}</small></a
+          >
+          <a class="dropdown-item" [routerLink]="['/menu/pasta']"
+            >{{'header.foodPasta' | translate}}
+            <small style="font-size: xx-small">{{ recomendPasta }}</small></a
+          >
+          <a class="dropdown-item" [routerLink]="['/menu/bowl']"
+            >{{'header.foodBowl' | translate}}
+            <small style="font-size: xx-small">{{ recomendBowl }}</small></a
+          >
+          <a class="dropdown-item" [routerLink]="['/menu/fish']"
+            >{{'header.foodFish' | translate}}
+            <small style="font-size: xx-small">{{ recomendFish }}</small></a
+          >
+          <a class="dropdown-item" [routerLink]="['/menu/meat']"
+            >{{'header.foodMeat' | translate}}
+            <small style="font-size: xx-small">{{ recomendMeat }}</small></a
+          >
+          <a class="dropdown-item" [routerLink]="['/menu/salad']"
+            >{{'header.foodSalad' | translate}}
+            <small style="font-size: xx-small">{{ recomendSalad }}</small></a
+          >
+          <!-- <a class="dropdown-item" [routerLink]="[ '/menu/bakery']">Desserts <small
+                style="font-size: xx-small;">{{recomendBakery}}</small></a> -->
+          <a class="dropdown-item" [routerLink]="['/menu/desserts']"
+            >{{'header.foodDesserts' | translate}}
+            <small style="font-size: xx-small">{{ recomendDesserts }}</small></a
+          >
+          <!-- <a class="dropdown-item" [routerLink]="[ '/menu/desserts']">Nutrition programs</a> -->
+          <a class="dropdown-item" [routerLink]="['/menu/smoothie']">{{'header.foodSmoothie' | translate}}</a>
+        </div>
+      </span>
+    </div>
+    <div class="nav__menu__item">
+      <span dropdown>
+        <a
+          href
+          id="basic-link"
+          dropdownToggle
+          (click)="(false)"
+          aria-controls="basic-link-dropdown"
+          >{{'header.programs' | translate}}</a
+        >
+        <div
+          id="basic-link-dropdown"
+          *dropdownMenu
+          class="dropdown-menu nav__menu__item__nutritionDropdown"
+          role="menu"
+          aria-labelledby="basic-link"
+        >
+          <a class="dropdown-item" [routerLink]="['/nutrion/nutrition programs for women']">{{'header.programsWomen' | translate}}</a>
+          <a class="dropdown-item" [routerLink]="['/nutrion/nutrition programs for men']">{{'header.programsMen' | translate}}</a>
+        </div>
+      </span>
+    </div>
+    <div class="nav__menu__item">
+      <a class="nav__menu__item__logo" href="#" [routerLink]="['/home']">
+        <img src="../../../assets/images/logo.jpg" alt="" />
+      </a>
+    </div>
+    <div class="nav__menu__item">
+      <a class="nav-link special_button" [routerLink]="['/basket']">{{'header.basket' | translate : {'totalPrice':totalPrice} }}</a>
+      <!-- <a class="nav-link special_button" [routerLink]="['/basket']">Basket : {{ totalPrice }} grn</a> -->
+    </div>
+    <div class="nav__menu__item">
+      <a
+        *ngIf="!statusLogin"
+        class="nav-link special_button"
+        [routerLink]="['/log-in']"
+        >{{'header.logIn' | translate}}</a
+      >
+      <a
+        *ngIf="statusLogin && adminPage"
+        class="nav-link special_button"
+        [routerLink]="['/' + urlLogin]"
+        >{{ 'header.adminPage' | translate }}</a
+      >
+      <a
+        *ngIf="statusLogin && userPage"
+        class="nav-link special_button"
+        [routerLink]="['/' + urlLogin]"
+        >{{ 'header.userPage' | translate }}</a
+      >
+      <a
+        *ngIf="statusLogin && courierPage"
+        class="nav-link special_button"
+        [routerLink]="['/' + urlLogin]"
+        >{{ 'header.courierPage' | translate }}</a
+      >
+    </div>
+  </div>
+
+  <!-- <a class="nav-link special_button" [routerLink]="[ '/get-started']" style="font-family: 'Comfortaa-Medium';">
+          <p>Get started</p>
+        </a> -->
+
+  <div class="nav__hamburger">
+    <input class="nav__hamburger__toggle" id="menu__toggle" type="checkbox" />
+    <label class="nav__hamburger__btn" for="menu__toggle">
+      <span></span>
+    </label>
+
+    <ul class="nav__hamburger__box">
+      <!-- <input class="nav__hamburger__toggle" id="menu__toggle" type="checkbox" /> -->
+    <!-- <label class="nav__hamburger__toggle__btn" for="menu__toggle"> -->
+      <!-- <span></span> -->
+    <!-- </label> -->
+    <li class="nav__hamburger__box__item">
+      <a class="nav__hamburger__item__logo" href="#" [routerLink]="['/home']">
+        <!-- <img src="../../../assets/images/logo.jpg" alt="" /> -->
+        Home
+      </a>
+    </li>
+    <li class="nav__hamburger__box__item">
+      <span dropdown>
+        <a
+          href
+          id="basic-link"
+          dropdownToggle
+          (click)="(false)"
+          aria-controls="basic-link-dropdown"
+          >Our food</a
+        >
+        <div
+          id="basic-link-dropdown"
+          *dropdownMenu
+          class="dropdown-menu nav__menu__item__foodDropdown"
+          role="menu"
+          aria-labelledby="basic-link"
+        >
+          <a class="dropdown-item" [routerLink]="['/menu/soup']"
+            >Soup
+            <small style="font-size: xx-small">{{ recomendSoup }}</small></a
+          >
+          <a class="dropdown-item" [routerLink]="['/menu/pasta']"
+            >Pasta
+            <small style="font-size: xx-small">{{ recomendPasta }}</small></a
+          >
+          <a class="dropdown-item" [routerLink]="['/menu/bowl']"
+            >Bowl
+            <small style="font-size: xx-small">{{ recomendBowl }}</small></a
+          >
+          <a class="dropdown-item" [routerLink]="['/menu/fish']"
+            >Fish
+            <small style="font-size: xx-small">{{ recomendFish }}</small></a
+          >
+          <a class="dropdown-item" [routerLink]="['/menu/meat']"
+            >Meat
+            <small style="font-size: xx-small">{{ recomendMeat }}</small></a
+          >
+          <a class="dropdown-item" [routerLink]="['/menu/salad']"
+            >Salad
+            <small style="font-size: xx-small">{{ recomendSalad }}</small></a
+          >
+          <!-- <a class="dropdown-item" [routerLink]="[ '/menu/bakery']">Desserts <small
+                style="font-size: xx-small;">{{recomendBakery}}</small></a> -->
+          <a class="dropdown-item" [routerLink]="['/menu/desserts']"
+            >Desserts
+            <small style="font-size: xx-small">{{ recomendDesserts }}</small></a
+          >
+          <!-- <a class="dropdown-item" [routerLink]="[ '/menu/desserts']">Nutrition programs</a> -->
+          <a class="dropdown-item" [routerLink]="['/menu/smoothie']">Smothie</a>
+        </div>
+      </span>
+    </li>
+    <li class="nav__hamburger__box__item">
+      <span dropdown>
+        <a
+          href
+          id="basic-link"
+          dropdownToggle
+          (click)="(false)"
+          aria-controls="basic-link-dropdown"
+          >Nutrition programs</a
+        >
+        <div
+          id="basic-link-dropdown"
+          *dropdownMenu
+          class="dropdown-menu nav__menu__item__nutritionDropdown"
+          role="menu"
+          aria-labelledby="basic-link"
+        >
+          <a class="dropdown-item" [routerLink]="['/nutrion/women']">For women</a>
+          <a class="dropdown-item" [routerLink]="['/nutrion/men']">For men</a>
+        </div>
+      </span>
+    </li>
+    <li class="nav__hamburger__box__item">
+      <a class="nav-link special_button" [routerLink]="['/basket']"
+        >Basket : {{ totalPrice }} grn</a
+      >
+    </li>
+    <li class="nav__hamburger__box__item">
+      <a
+        *ngIf="!statusLogin"
+        class="nav-link special_button"
+        [routerLink]="['/log-in']"
+        >Log in</a
+      >
+      <a
+        *ngIf="statusLogin"
+        class="nav-link special_button"
+        [routerLink]="['/' + urlLogin]"
+        >{{ pageLogin }}</a
+      >
+    </li>
+    </ul>
+  </div>
+</nav>

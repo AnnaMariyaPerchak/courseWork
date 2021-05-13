@@ -1,0 +1,55 @@
+
+$base-color-green: #59b567;
+$base-color-grey: #999;
+$base-font: "Comfortaa-Medium";
+
+label,a,input[type=email],input[type=password],a,span {
+  font-family: $base-font;
+  color: black;
+}
+
+.logIn{
+    margin-left: auto;margin-right: auto;
+    &__form{
+        width: 45%;
+    height: 300px;
+    padding: 10px;
+    margin: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    &__buttons{
+        display: grid;
+        justify-content: center;
+        &__signUpButton{
+            margin-bottom: 15px;
+            justify-self: center;
+            span{
+                color: $base-color-green;
+            text-decoration: revert;
+            }
+        }
+        &__logInButton{
+            background-color:$base-color-green;
+            width: 250px;
+        }
+    }
+    }
+    
+}
+
+
+@media screen and (max-width: 768px){
+    .logIn{
+        &__form{
+        width: 45%;
+        }
+    }
+}
+@media screen and (max-width: 425px){
+    .logIn{
+        &__form{
+        width: 95%;
+        }
+    }
+}

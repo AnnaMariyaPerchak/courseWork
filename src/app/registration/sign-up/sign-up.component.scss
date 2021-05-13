@@ -1,0 +1,57 @@
+$base-color-green: #59b567;
+$base-color-grey: #999;
+$base-font: "Comfortaa-Medium";
+
+label,
+input[type="text"],
+legend,
+a,
+span {
+  font-family: $base-font;
+  color: black;
+}
+
+.signUp {
+  margin-left: auto;
+  margin-right: auto;
+  &__form {
+    width: 45%;
+    padding: 10px;
+    margin: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    &__buttons {
+      display: grid;
+      justify-content: center;
+      &__logInButton {
+        margin-bottom: 15px;
+        justify-self: center;
+        color: black;
+        span {
+          color: $base-color-green;
+          text-decoration: revert;
+        }
+      }
+      &__signUpButton {
+        background-color: $base-color-green;
+        width: 250px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .signUp {
+    &__form {
+      width: 75%;
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  .signUp {
+    &__form {
+      width: 95%;
+    }
+  }
+}

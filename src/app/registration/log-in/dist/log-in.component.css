@@ -1,0 +1,45 @@
+label, a, input[type=email], input[type=password], a, span {
+  font-family: "Comfortaa-Medium";
+  color: black;
+}
+
+.logIn {
+  margin-left: auto;
+  margin-right: auto;
+}
+.logIn__form {
+  width: 45%;
+  height: 300px;
+  padding: 10px;
+  margin: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.logIn__form__buttons {
+  display: grid;
+  justify-content: center;
+}
+.logIn__form__buttons__signUpButton {
+  margin-bottom: 15px;
+  justify-self: center;
+}
+.logIn__form__buttons__signUpButton span {
+  color: #59b567;
+  text-decoration: revert;
+}
+.logIn__form__buttons__logInButton {
+  background-color: #59b567;
+  width: 250px;
+}
+
+@media screen and (max-width: 768px) {
+  .logIn__form {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .logIn__form {
+    width: 95%;
+  }
+}

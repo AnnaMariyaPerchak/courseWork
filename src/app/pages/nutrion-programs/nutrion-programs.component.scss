@@ -1,0 +1,119 @@
+$base-color-green: #59b567;
+$base-color-grey: #999;
+$base-font: "Comfortaa-Medium";
+
+span,
+p,
+h2,
+h1 {
+  font-family: $base-font;
+  color: black;
+}
+
+.nutritions {
+  &__container {
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    &__card {
+      width: 300px;
+      border: none;
+      margin: 15px;
+      padding: 0;
+      background-color: rgb(219, 219, 219);
+      &__imageDiv {
+        height: auto;
+        overflow: hidden;
+        &__image {
+          width: 300px;
+          height: auto;
+          transition: transform 0.5s ease;
+          &:hover {
+            transform: scale(1.5);
+          }
+        }
+      }
+      &__body {
+        margin: 20px;
+        &__name {
+          font-family: $base-font;
+          font-size: 35px;
+          font-weight: 300;
+          line-height: 35px;
+          margin-bottom: 10px;
+          text-align: center;
+        }
+        &__details {
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          margin-bottom: 0;
+          text-decoration: underline;
+          color: #59b567;
+        }
+        &__kcalPrice {
+          display: flex;
+          &__kcal {
+            text-align: end;
+            width: 100%;
+          }
+          &__price,
+          &__kcal {
+            color: black;
+            font-family: $base-font;
+            font-size: 15px;
+            margin: 18px 23px;
+          }
+        }
+        &__orderButtons {
+          width: 45%;
+          margin: 0 auto;
+          &__basketButton {
+            background-color: #59b567;
+            color: black;
+          }
+          &__count {
+            margin: auto;
+            font-size: 20px;
+          }
+        }
+        &__buttons {
+          &__order {
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+            border: 2px solid #59b567;
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.template{
+  &__body{
+    &__title{
+      font-family: $base-font;
+      font-size: 20px;
+    color: $base-color-green;
+    text-decoration: underline;
+    }
+    &__exampleMenu{
+      font-family: $base-font;
+      font-size: 18px;
+      &__title{
+        color: $base-color-green;
+      }
+    }
+    &__button{
+      width: 100px;
+      background-color: $base-color-green;
+      border-radius: 15px;
+      font-family: $base-font;
+      font-size: 18px;
+      display: block;
+      margin: 0 0 0 auto;
+    }
+  }
+}

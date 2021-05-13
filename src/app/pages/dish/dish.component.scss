@@ -1,0 +1,110 @@
+$base-color-green: #59b567;
+$base-color-grey: black;
+$base-font: "Comfortaa-Medium";
+
+span,
+p,
+h2,
+h1 {
+  font-family: $base-font;
+  color: black;
+}
+.dishes {
+  background-image: url("../../../assets/images/background-dish.jpg");
+  background-size: cover;
+  background-attachment: scroll;
+  &__container {
+    margin: 25px auto 0;
+    justify-content: center;
+    display: grid;
+    &__card {
+      background-color: #fff;
+      padding: 30px;
+      box-shadow: 0 0 5px rgba(75, 75, 75, 0.07);
+      z-index: 1;
+      width: 700px;
+      display: block;
+      border-radius: 20px;
+      margin: 15px;
+      position: relative;
+      &__number {
+        margin-top: 15px;
+      }
+      &__circle {
+        border: 1px solid #aaa;
+        border-radius: 50%;
+        display: inline-block;
+        line-height: 22px;
+        font-size: 12px;
+        height: 25px;
+        text-align: center;
+        width: 25px;
+        position: absolute;
+        top: -5px;
+        left: 10px;
+      }
+      &__body {
+        display: inline-block;
+        float: left;
+        width: 40%;
+        color: black;
+        padding: 15px;
+        &__name {
+          font-family: $base-font;
+          font-size: 35px;
+          font-weight: 300;
+          line-height: 35px;
+          margin-bottom: 10px;
+          color: $base-color-green;
+        }
+        &__weightPrice {
+          display: flex;
+          margin-top: 20px;
+
+          &__addInfo {
+            margin-right: 15px;
+            display: block;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            font-family: $base-font;
+          }
+        }
+        &__description {
+          display: inline-block;
+          font-weight: 300;
+          line-height: 22px;
+          margin: 10px 0;
+          &__title{
+            color: #59b567;
+            text-decoration: underline;
+            text-decoration-color: #59b567;
+          }
+        }
+      }
+      &__right{
+        float: right;
+        &__media{
+          width: auto; 
+          height: 250px;
+        }
+        &__buttons{
+          display: flex; 
+          align-items: center; 
+          justify-content: center;
+          &__busketButton{
+            background-color: #59b567; 
+            color: black;
+          }
+          &__count{
+            margin: auto
+          }
+          &__orderButton{
+            border: 2px solid #59b567;
+            border-radius: 20px;
+            margin-right: 15px
+          }
+        }
+      }
+    }
+  }
+}

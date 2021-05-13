@@ -1,0 +1,34 @@
+<div class="logIn">
+  <form class="logIn__form">
+    <div class="form-group">
+      <label for="exampleInputEmail1">{{'logIn.form.email' | translate}}</label>
+      <input
+        type="email"
+        class="form-control"
+        [(ngModel)]="login"
+        name="login"
+      />
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">{{'logIn.form.password' | translate}}</label>
+      <input
+        type="password"
+        class="form-control"
+        [(ngModel)]="password"
+        name="password"
+      />
+    </div>
+    <div class="logIn__form__buttons">
+      <a class="logIn__form__buttons__signUpButton" [routerLink]="['/sign-up']"
+        >{{'logIn.form.routing.title' | translate}} 
+        <span>{{'logIn.form.routing.signUp' | translate}}</span>
+      </a>
+      <a
+        [routerLink]="['/profile']"
+        (click)="signIn()"
+        class="btn logIn__form__buttons__logInButton"
+        >{{'logIn.form.logInBtn' | translate}}</a
+      >
+    </div>
+  </form>
+</div>

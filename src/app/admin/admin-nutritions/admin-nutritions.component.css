@@ -1,0 +1,139 @@
+.adminNutritions {
+  min-height: 515px;
+}
+
+.adminNutritions__head {
+  padding: 5px 5px 0 45px;
+  margin: 20px;
+}
+
+.adminNutritions__head__title {
+  line-height: 30px;
+  font-size: 35px;
+  color: #59b567;
+  font-family: "Comfortaa-Medium";
+}
+
+.adminNutritions__head__button {
+  width: 150px;
+  background-color: #59b567;
+  border-radius: 15px;
+  font-family: "Comfortaa-Medium";
+  font-size: 20px;
+}
+
+.adminNutritions__filter {
+  width: 100%;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid #999999;
+  padding: 11px 18px;
+  font-family: "Comfortaa-Medium";
+  font-size: 18px;
+}
+
+.adminNutritions__filter:focus {
+  outline: none;
+}
+
+.adminNutritions__table {
+  font-family: "Comfortaa-Medium";
+}
+
+.adminNutritions__table thead {
+  background-color: #59b567;
+}
+
+.adminNutritions__table__button {
+  width: 100px;
+  background-color: #59b567;
+  border-radius: 15px;
+  font-family: "Comfortaa-Medium";
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.adminNutritions__table td {
+  color: black;
+}
+
+.template__header {
+  padding: 15px 15px 0px 15px;
+}
+
+.template__header__title {
+  color: black;
+  font-family: "Comfortaa-Medium";
+  font-size: 23px;
+}
+
+.template__body__optionName {
+  font-size: 18px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-family: "Comfortaa-Medium";
+}
+
+.template__body__select {
+  width: 100%;
+  margin: 5px 5px 5px 20px;
+  font-family: "Comfortaa-Medium";
+  font-size: 18px;
+  border-radius: 36px;
+  display: inline-block;
+  overflow: hidden;
+  border: 1px solid #cccccc;
+}
+
+.template__body__select select {
+  width: 100%;
+  border: 0px;
+  outline: none;
+}
+
+.template__body__option {
+  width: 100%;
+  margin: 5px;
+  border-radius: 20px;
+  border: 1px solid #999999;
+  padding: 11px 18px;
+  font-family: "Comfortaa-Medium";
+  font-size: 18px;
+}
+
+.template__body__option:focus {
+  outline: none;
+}
+
+.template__body__uploadPhoto {
+  margin-top: 15px;
+}
+
+.template__footer__button {
+  width: 120px;
+  background-color: #59b567;
+  border-radius: 15px;
+  font-family: "Comfortaa-Medium";
+  font-size: 18px;
+}
+
+.deleteTemplate__body {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.deleteTemplate__body__button, .deleteTemplate__body__buttonDanger {
+  width: 120px;
+  background-color: #59b567;
+  border-radius: 15px;
+  font-family: "Comfortaa-Medium";
+  font-size: 18px;
+}
+
+.deleteTemplate__body__buttonDanger {
+  background-color: red;
+  margin-left: 10px;
+}
+/*# sourceMappingURL=admin-nutritions.component.css.map */

@@ -1,0 +1,173 @@
+<div class="col-12 adminDishes">
+    <div class="container adminDishes__head">
+      <div class="row">
+        <!-- <div class="col-9" style="margin: 5px"> -->
+          <p class="col-9 adminDishes__head__title"> {{'admin.dishes.head.title' | translate}}</p>
+        <!-- </div> -->
+        <div class="col">
+          <input
+            type="button"
+            (click)="addModal(Template)"
+            value="{{'admin.dishes.head.addBtn' | translate}}"
+            class="btn adminDishes__head__button"
+          />
+        </div>
+      </div>
+    </div>
+    <input
+      type="text"
+      placeholder="{{'admin.dishes.searchField' | translate}}"
+      class="adminDishes__filter"
+      [(ngModel)]="searchName"
+      name="searchName"
+    />
+    <hr />
+    <table class="table table-bordered adminDishes__table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">{{'admin.dishes.table.head.category' | translate}}</th>
+            <th scope="col">{{'admin.dishes.table.head.name' | translate}}</th>
+            <th scope="col" >{{'admin.dishes.table.head.description' | translate}}</th>
+            <th scope="col">{{'admin.dishes.table.head.weight' | translate}}</th>
+            <th scope="col" >{{'admin.dishes.table.head.price' | translate}}Prce</th>
+            <th scope="col">{{'admin.dishes.table.head.image' | translate}}</th>
+            <!-- <th scope="col">Edit</th> -->
+            <th scope="col">{{'admin.dishes.table.editBtn' | translate}} / {{'admin.dishes.table.deleteBtn' | translate}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let  dish of arrayDishes |search:searchName;let i=index">
+            <td>{{i+1}}</td>
+            <td>
+                <p>{{'admin.dishes.table.en' | translate}}:{{dish.category.name}}</p>
+                <br>
+                <p>{{'admin.dishes.table.ukr' | translate}}:{{dish.category.nameUkr}}</p>
+            </td>
+            <td>
+                <p>{{'admin.dishes.table.en' | translate}}:{{dish.name}}</p>
+                <br>
+                <p>{{'admin.dishes.table.ukr' | translate}}:{{dish.nameUkr}}</p>
+            </td>
+            <td>
+                <p>{{'admin.dishes.table.en' | translate}}:{{dish.description}}</p>
+                <br>
+                <p>{{'admin.dishes.table.ukr' | translate}}:{{dish.descriptionUkr}}</p>
+            </td>
+            <td>{{dish.weight}}</td>
+            <td>{{dish.price}} grn</td>
+            <td>
+                <img src="{{dish.image}}" alt="" class="adminDishes__table__image">
+            </td>
+            <!-- <td><input type="button" value="Edit" class="btn adminDishes__table__button" (click)="editModal(Template,dish)"> -->
+            <!-- </td> -->
+            <td>
+                <input type="button" value="{{'admin.dishes.table.editBtn' | translate}}" class="btn adminDishes__table__button" (click)="editModal(Template,dish)">
+                <input type="button" value="{{'admin.dishes.table.deleteBtn' | translate}}" class="btn adminDishes__table__button" 
+                    (click)="deleteModal(deleteTemplate,dish)">
+            </td>
+        </tr>
+    </tbody>
+    </table>
+  </div>
+  
+<ng-template #Template>
+    <div class="modal-header template__header">
+        <h4 class="modal-title pull-left template__header__title" *ngIf="!editStatus">{{'admin.dishes.template.head.addTitle' | translate}}</h4>
+        <h4 class="modal-title pull-left template__header__title" *ngIf="editStatus">{{'admin.dishes.template.head.editTitle' | translate}}</h4>
+        <button
+          type="button"
+          class="close pull-right"
+          aria-label="Close"
+          (click)="modalRef.hide()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <div class="modal-body template__body">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.dishes.template.head.addTitle' | translate}}:</div>
+                <div class="col-8 template__body__select">
+                      <select  class="custom-select" [(ngModel)]="newCategory" >
+                        <option selected>{{'admin.dishes.template.body.option' | translate}} </option>
+                            <option *ngFor="let category of arrayCategories" value="{{category.name}}" >{{category.name}}</option>
+                      </select>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.dishes.template.body.name' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newName" name="newName">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.dishes.template.body.nameUkr' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newNameUkr" name="newNameUkr">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.dishes.template.body.description' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newDescription" name="newDescription">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.dishes.template.body.descriptionUkr' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newDescriptionUkr" name="newDescriptionUkr">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.dishes.template.body.weight' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newWeight" name="newWeight">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3 template__body__optionName">{{'admin.dishes.template.body.price' | translate}}:</div>
+                <div class="col-9">
+                    <input type="text" class="template__body__option" [(ngModel)]="newPrice" name="newPrice">
+                </div>
+            </div>
+        </div>
+        <div class="custom-file template__body__uploadPhoto">
+            <input (change)="uploadFile($event)" type="file" class="custom-file-input" id="validatedCustomFile" required>
+            <label class="custom-file-label template__body__optionName" for="validatedCustomFile">{{'admin.dishes.template.body.image' | translate}}...</label>
+          </div>
+          <div class="progress mt-3 mb-3">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar"
+              [style.width]="(uploadProgress | async) + '%'" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+    </div>
+    <!-- </div> -->
+    <div class="modal-footer template__footer">
+        <input type="button" value="{{'admin.dishes.template.footer.closeBtn' | translate}}" class="btn template__footer__button" (click)="modalRef.hide()">
+        <input type="button" *ngIf="!(newName) && !editStatus" value="{{'admin.dishes.template.footer.addBtn' | translate}}" class="btn template__footer__button" disabled>
+        <input type="button" *ngIf="newName && !editStatus" value="{{'admin.dishes.template.footer.addBtn' | translate}}" class="btn template__footer__button"
+            (click)="addDish()">
+        <input type="button" *ngIf="editStatus" value="{{'admin.dishes.template.footer.saveChangesBtn' | translate}}" class="btn template__footer__button"
+            (click)="saveEditDish()">
+    </div>
+</ng-template>
+
+<ng-template #deleteTemplate>
+    <div class="modal-body deleteTemplate__body">
+        <input type="button" value="{{'admin.dishes.deleteTemplate.dismissBtn' | translate}}" (click)="dismissDish()" class="btn deleteTemplate__body__button"
+            style="margin-right: 10px;">
+        <input type="button" value="{{'admin.dishes.deleteTemplate.deleteBtn' | translate}}" (click)="deleteDishFunction(deleteDish)" class="btn deleteTemplate__body__buttonDanger">
+    </div>
+</ng-template>
